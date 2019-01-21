@@ -1,10 +1,22 @@
-## Welcome to GitHub Pages!
+# Welcome to AzCEE Pages!
 
+These pages are published and can be reached at: https://azcee.github.io/
+
+## AzCEE team
+
+AzCEE is a group of creative and passionate enthusiasts and technologists working (or ex-) as Technology Solutions Professional (TSP) @Microsoft with core focus on [@Azure](https://portal.azure.com)! We're keen to share what we've learnt with anyone in the World!
+
+We believe in what people make possible. Our mission is to empower every person and every organization on the planet to achieve [more](https://www.microsoft.com/en-us/about).
+
+![Microsoft's submarine datacenter](assets/images/layout/submarine.jpg)
+
+
+ We're creative and passionate team of technology developers with main focus on web and mobile applications /
 You can use the [editor on GitHub](https://github.com/AzCEE/azcee/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
@@ -28,10 +40,6 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AzCEE/azcee/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with Pages? [Contact](https://github.com/erudinsky) if you need assistance!
