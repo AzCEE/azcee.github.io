@@ -1,6 +1,6 @@
 # Site
-name: "AzCEE Team blog"
-description: "Blog of AzCEE team @Microsoft @Azure"
+name: "AzCEE Team pages - Microsoft Azure stories by TSPs"
+description: "AzCEE is a group of creative and passionate enthusiasts and technologists working (or ex-) as Technology Solutions Professional (TSP) @Microsoft with core focus on @Azure! We're keen to share what we've learnt with anyone in the World!"
 meta_description: "Independently driven blog by members of Azure TSP"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
@@ -14,7 +14,7 @@ authors:
   evgeny:
     name: Evgeny
     display_name: Evgeny
-    gravatar: ca97060fa8bb803b34c9aee2a
+    gravatar: f246b5cca97060fa8bb803b34c9aee2a
     email: evgeny.rudinsky@gmail.com
     web: https://erudinsky.com
     twitter: https://twitter.com/evgenyrudinsky
