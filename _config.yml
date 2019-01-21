@@ -5,7 +5,7 @@ meta_description: "Independently driven blog by members of Azure TSP"
 logo: 'assets/images/layout/small-logo.png'
 favicon: 'assets/images/layout/-small-logo.png'
 baseurl:
-google_analytics: ''
+google_site_tag: 'UA-132881488-1'
 disqus: 'azcee'
 mailchimp-list: ''
 
