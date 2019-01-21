@@ -10,9 +10,7 @@ We believe in what people make possible. Our mission is to empower every person 
 
 ![Microsoft's submarine datacenter](assets/images/layout/submarine.jpg)
 
-
- We're creative and passionate team of technology developers with main focus on web and mobile applications /
-You can use the [editor on GitHub](https://github.com/AzCEE/azcee/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can use the [editor on GitHub](https://github.com/AzCEE/azcee.github.io) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
