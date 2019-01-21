@@ -1,7 +1,7 @@
 # Site
 name: "AzCEE Team blog"
 description: "Blog of AzCEE team @Microsoft @Azure"
-meta_description: "Jekyll template, Medium styled, free for bloggers."
+meta_description: "Independently driven blog by members of Azure TSP"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl:
