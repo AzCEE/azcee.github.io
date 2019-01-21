@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello world!"
 author: evgeny
-categories: [ azcee, hello-world ]
+tags: [ azcee, hello-world ]
 image: assets/images/11.jpg
 featured: true
 hidden: true
