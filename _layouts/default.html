@@ -154,7 +154,7 @@
             </div>
 		</div>
 		<div class="col-md-8 p-5 align-self-center text-center">
-          {% assign tags_list = site.categories %}  
+          {% assign tags_list = site.tags %}  
           {% if tags_list.first[0] == null %}
             {% for tag in tags_list %} 
               <a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag | capitalize }} {{ site.tags[tag].size }}</a>
