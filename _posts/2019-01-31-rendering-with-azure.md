@@ -7,14 +7,19 @@ image: assets/users/sergeyperus/robot.png
 featured: true
 
 ---
-For creating 3D models, animations and visualization 
-In their engineering projects (i.e. planning of object construction, interior of the room, complex nodes aggregates, machines and mechanisms) and creating media content (games/movies/ads)
-
-After creating a model, it is required to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position
+Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. You can render it on you server, it tooks about 30 minutes in FHD resolution
 
 Model and image can appear like this:
-
 image: assets/users/sergeyperus/model-and-frame.png
+
+Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will took you 7500x30 = 156 'days'
+Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable
+
+Of cource, modern market is full of rendering service providers who can help you. 
+This post is how to build you own render farm, and in most cases it will cost you 30-70% cheaper and many times faster
+
+
+
 
 As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.
 
