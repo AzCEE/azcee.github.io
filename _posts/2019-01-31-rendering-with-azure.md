@@ -1,13 +1,19 @@
 ---
 layout: post
-title:  "Powerful things you can do with the Markdown editor"
+title:  "3D rendering using Microsoft Azure"
 author: sergeype
 tags: [ 3dsmax, vray, renderong, azure, batch, lowpriority ]
-image: assets/images/16.jpg
+image: assets/users/sergeyperus/robot.png
 featured: true
 
 ---
-There are lots of powerful things you can do with the Markdown editor. If you've gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!
+In some cases, customers use software for creating 3D models, animations and visualization 
+In their engineering projects (i.e. planning of object construction, interior of the room, complex nodes aggregates, machines and mechanisms) and creating media content (games/movies/ads)
+
+After creating a model, it is required to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position
+
+Model and image can appear like this:
+
 
 As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.
 
