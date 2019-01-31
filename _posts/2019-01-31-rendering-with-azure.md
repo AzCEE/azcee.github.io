@@ -13,6 +13,7 @@ In their engineering projects (i.e. planning of object construction, interior of
 After creating a model, it is required to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position
 
 Model and image can appear like this:
+
 image: assets/users/sergeyperus/model-and-frame.png
 
 As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.
