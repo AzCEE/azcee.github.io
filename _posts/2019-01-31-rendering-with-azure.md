@@ -4,6 +4,8 @@ title:  "Powerful things you can do with the Markdown editor"
 author: sergeype
 tags: [ 3dsmax, vray, renderong, azure, batch, lowpriority ]
 image: assets/images/16.jpg
+featured: true
+
 ---
 There are lots of powerful things you can do with the Markdown editor. If you've gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!
 
