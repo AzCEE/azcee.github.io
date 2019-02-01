@@ -2,7 +2,7 @@
 layout: post
 title:  "3D rendering using Microsoft Azure"
 author: sergeype
-tags: [ 3dsmax, vray, renderong, azure, batch, lowpriority ]
+tags: [ 3dsmax, vray, rendering, azure, batch, lowpriority ]
 image: assets/users/sergeyperus/robot.png
 featured: true
 
@@ -10,7 +10,7 @@ featured: true
 Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. You can render it on you server, it tooks about 30 minutes in FHD resolution
 
 Model and image can appear like this:
-image: assets/users/sergeyperus/model-and-frame.png
+[image]: assets/users/sergeyperus/model-and-frame.png
 
 Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will took you 7500x30 = 156 'days'
 Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable
