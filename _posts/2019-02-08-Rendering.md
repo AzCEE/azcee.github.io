@@ -3,7 +3,7 @@ layout: post
 title:  "3D rendering using Microsoft Azure"
 author: sergeype
 tags: [ 3dsmax, vray, rendering, azure, batch, lowpriority ]
-image: assets/users/sergeyperus/robot.png
+image: assets/users/sergeyperus/pot.png
 featured: true
 
 ---
