@@ -30,7 +30,7 @@ And, of course, you don't have to pay to 3rd party doing this job. So, let's roc
 
 ## How
 
-First of all, you need an Azure subscription. You can get free trial with $200 here. In order to rent 3rd party licenses (like Autodesk or Chaos V-Ray), you can use your card, because you cannot pay for it with Microsoft credit.
+First of all, you need an Azure subscription. You can get free trial with $200 [here](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/). In order to rent 3rd party licenses (like Autodesk or Chaos V-Ray), you can use your card, because you cannot pay for it with Microsoft credit.
 And of course you can use your existing Azure subscription, many companies have it already - just ask your IT for it.
 I will explain when and how much you have to pay
 
