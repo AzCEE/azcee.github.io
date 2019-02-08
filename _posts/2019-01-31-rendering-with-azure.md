@@ -12,7 +12,7 @@ Imagine - you've created a 3d model of your object (interior, mechanism, constru
 Model and image can appear like this:
 ![image]: assets/users/sergeyperus/model-and-frame.png
 
-Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will took you 7500x30 = 156 'days'
+Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will take you 7500x30 = 156 `days`
 Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable
 
 Of cource, modern market is full of rendering service providers who can help you. 
