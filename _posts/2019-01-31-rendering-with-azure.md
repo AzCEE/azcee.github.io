@@ -5,7 +5,7 @@ author: sergeype
 tags: [ 3dsmax, vray, rendering, azure, batch, lowpriority ]
 image: assets/users/sergeyperus/robot.png
 featured: true
-
+hidden: false
 ---
 Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. After creating a model, you want to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position
 This image synthesis process is called rendering. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server
