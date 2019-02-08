@@ -46,5 +46,8 @@ Let's get Batch service to front and create Batch account
 Here we should create:
 
  - *Resource group*. It will be used as a logical collection of assets for easy monitoring, access control, and for more effective management of their costs
+ - *Storage account*. Choose Account kind as **StorageV2**. We will use it for storing our scene file/textures, as well as results.
+
+ ![Batch account creation](/assets/users/sergeyperus/batchaccount.png)
 
 
