@@ -7,10 +7,12 @@ image: assets/users/sergeyperus/robot.png
 featured: true
 
 ---
-Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. You can render it on you server, it tooks about 30 minutes in FHD resolution
+Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. After creating a model, you want to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position
+This image synthesis process is called rendering. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server
+
 
 Model and image can appear like this:
-![image]: assets/users/sergeyperus/model-and-frame.png
+![image](assets/users/sergeyperus/model-and-frame.png)
 
 Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will take you 7500x30 = 156 `days`
 Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable
