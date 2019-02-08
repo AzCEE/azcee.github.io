@@ -10,28 +10,22 @@ featured: true
 Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. You can render it on you server, it tooks about 30 minutes in FHD resolution
 
 Model and image can appear like this:
-![image]: assets/users/sergeyperus/model-and-frame.png
+![image] (assets/users/sergeyperus/model-and-frame.png)
 
-Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will take you 7500x30 = 156 `days`
+Now you need to create a short 5 minute movie. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server
+With 25 fps, you have to render 25x60x5 = 7500 frames. It will take you 7500x30 = 156 `days`.
 Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable
 
-Of cource, modern market is full of rendering service providers who can help you. 
-This post is how to build you own render farm, and in most cases it will cost you 30-70% cheaper and many times faster
+Of course, modern market is full of rendering service providers who can help you. 
+This post is about how to build you own render farm, and in most cases it will cost you 30-70% less and many times faster
 
 
+## How do create you own rendering farm
 
+Of ccourse, i will record a video with all process. But now you can read it below
 
-As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.
-
-
-## Special formatting
-
-As well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:
-
-+ ~~strike through~~
-+ ==highlight==
-+ \*escaped characters\*
-
+First of all, you have to have an Azure subscription. You can register trial with $200 credit here [https://azure.microsoft.com/en-us/offers/ms-azr-0044p/] or use your existing subscription
+I aditionall to trial subscription, 
 
 ## Writing code blocks
 
