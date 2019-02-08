@@ -8,9 +8,9 @@ featured: true
 
 ---
 	
-Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. After creating a model, you want to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position
+Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. After creating a model, you want to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position.
 This image synthesis process is called rendering. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server
-
+In our case, rendering 1 frame takes 30 min
 
 Model and image can appear like this:
 
@@ -20,28 +20,11 @@ Now you need to create a short 5 minute movie. With 25 fps, you have to render 2
 Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable
 
 Of cource, modern market is full of rendering service providers who can help you. 
-This post is how to build you own render farm, and in most cases it will cost you 30-70% cheaper and many times faster
+This post is how to build you own render farm and why this is a good idea
 
-If you already have a full Ruby development environment with all headers and RubyGems installed (see Jekyll’s requirements), you can create a new Jekyll site by doing the following:
+## Why 
 
+With Azure, you can engage thousands CPU cores with per-minute billing, automate rendering and control process by your own
+You can easily submit a few frames to estimate total cost and time. You even can use your own software and licenses, or rent it on a per-core per-minute rate (for 3DMax and V-Ray for example)
+And, of course, you don't have to pay to 3rd party doing this job. So, let's rock!
 
-
-
-
-
-
-```ruby
-# Install Jekyll and Bundler gems through RubyGems
-gem install jekyll bundler
-
-# Create a new Jekyll site at ./myblog
-jekyll new myblog
-
-# Change into your new directory
-cd myblog
-
-# Build the site on the preview server
-bundle exec jekyll serve
-
-# Now browse to http://localhost:4000
-```
