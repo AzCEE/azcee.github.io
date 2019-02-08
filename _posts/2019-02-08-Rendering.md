@@ -34,7 +34,14 @@ First of all, you need an Azure subscription. You can get free trial with $200 h
 And of course you can use your existing Azure subscription, many companies have it already - just ask your IT for it.
 I will explain when and how much you have to pay
 
-So, you have a subscription. Now you need to logon to [Azure portal](https://portal.azure.com)
+So, you have a subscription. Now you need to login to [Azure portal](https://portal.azure.com)
+Here you can see your home screen or dashboard. On the left you can find you favourite service groups (2) and you can customize it with All services (1). 
 
+![Azure portal](/assets/users/sergeyperus/AzPortal1.png)
 
+Let's get Batch service to front and create it 
+
+![Batch account](/assets/users/sergeyperus/AzPortal2.png)
+
+Now we need to create 
 
