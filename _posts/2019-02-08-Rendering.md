@@ -39,9 +39,12 @@ Here you can see your home screen or dashboard. On the left you can find you fav
 
 ![Azure portal](/assets/users/sergeyperus/AzPortal1.png)
 
-Let's get Batch service to front and create it 
+Let's get Batch service to front and create Batch account
 
 ![Batch account](/assets/users/sergeyperus/Azportal2.png)
 
-Now we need to create 
+Here we should create:
+
+ - *Resource group*. It will be used as a logical collection of assets for easy monitoring, access control, and for more effective management of their costs
+
 
