@@ -10,7 +10,7 @@ featured: true
 	
 Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. After creating a model, you want to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position.
 This image synthesis process is called rendering. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server.
-In our case, rendering 1 frame takes 30 min
+In our example, rendering 1 frame takes 30 min
 
 Model and image can appear like this:
 
@@ -26,7 +26,12 @@ This post is how to build you own render farm and why this is a good idea
 
 With Azure, you can engage thousands CPU cores with per-minute billing, automate rendering and control process by your own.
 You can easily submit a few frames to estimate total cost and time. You even can use your own software and licenses, or rent it on a per-core per-minute rate (for 3DMax and V-Ray for example).
-And, of course, you don't have to pay to 3rd party doing this job. So, let's rock!
+You can use two types of VM:  
+
+	**Dedicated**. This VMs will be available to you 100% time you need it
+	**Low Priority**. This VMs are not guaranteed. Based on plans and demand, they can disapear/reapear at any time. And they will cost you 2.5 times cheaper than **Dedicated**. When you need huge ammount of parallel vCPU, it is a perfect resource
+
+And, of course, you don't have to pay to 3rd party provider doing this job. So, let's rock!
 
 ## How
 
@@ -89,10 +94,18 @@ After installing the Batch Explorer, you need to login to your Azure account and
 Navigate to *Pools* on the left, our pool list is empty. You can use Autopool for each rendering, but I prefer to have my own, with all plugins I need. Click **"+"** above and let's create out first pool  
 
 - *ID* and *Display name* is basicaly a name of your pool
-- *Scale* is a principle of poll scaling. In case of *Manual* mode you have to put number of VMs befor rendering and stop it after the process
-Very important - `you have to stop VMs in pool after job, otherwise you will be billed for all running VMs in pool even job is finished!`
-To avoid extra charges we will use *autoscale function*. It will scale up VMs based on jobs ammount
+- *Scale* is a principle of pool scaling. In case of **Manual** mode you have to put number of VMs befor rendering and stop it after the process
+Very important - `you have to stop VMs in pool after job, otherwise you will be billed for all running VMs in pool even job is finished!`  
+To avoid extra charges we will use **autoscale function**. It will scale up VMs based on tasks ammount
 
+		startingNumberOfVMs = 0;
+		maxNumberofVMs = 50;
+		pendingTaskSamplePercent = $PendingTasks.GetSamplePercent(60 * TimeInterval_Second);
+		pendingTaskSamples = pendingTaskSamplePercent < 70 ? startingNumberOfVMs : avg($PendingTasks.GetSample(60 * TimeInterval_Second));
+		$TargetLowPriorityNodes=min(maxNumberofVMs, pendingTaskSamples);
+		//$TargetDedicatedNodes=min(maxNumberofVMs, pendingTaskSamples);  
+
+In this formula you should change **maxNumberofVMs** parametr to desired number of VM. I will describe how to understand optimal number of VM later
 
 ## How much it will cost
 
