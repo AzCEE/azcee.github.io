@@ -88,9 +88,9 @@ After installing the Batch Explorer, you need to login to your Azure account and
 
 Navigate to *Pools* on the left, our pool list is empty. You can use Autopool for each rendering, but I prefer to have my own, with all plugins I need. Click **"+"** above and let's create out first pool  
 
-- *ID* and *Display name* is basicaly a name of your pool;   
-- *Scale* is a principle of poll scaling. In case of *Manual* mode you have to put number of VMs befor rendering and stop it after the process.  
-Very important - `you have to stop VMs in pool after job, otherwise you will be billed for all running VMs in pool even job is finished!` 
+- *ID* and *Display name* is basicaly a name of your pool
+- *Scale* is a principle of poll scaling. In case of *Manual* mode you have to put number of VMs befor rendering and stop it after the process
+Very important - `you have to stop VMs in pool after job, otherwise you will be billed for all running VMs in pool even job is finished!`
 To avoid extra charges we will use *autoscale function*. It will scale up VMs based on jobs ammount
 
 
