@@ -86,10 +86,12 @@ After installing the Batch Explorer, you need to login to your Azure account and
 
 ### Creating compute pool
 
-Navigate to *Pools* on the left, our pool list is empty. Click **+** above and let's create out first pool  
+Navigate to *Pools* on the left, our pool list is empty. You can use Autopool for each rendering, but I prefer to have my own, with all plugins I need. Click **"+"** above and let's create out first pool  
 
 	- *ID* and *Display name* is basicaly a name of your pool;   
-	- *Scale* is a principle of poll scaling. In case of *Manual* mode you have to put number of VMs befor rendering and stop it after the process. We will use autoscale 
+	- *Scale* is a principle of poll scaling. In case of *Manual* mode you have to put number of VMs befor rendering and stop it after the process.  
+	Very important - `you have to stop VMs in pool after job, otherwise you will be billed for all running VMs in pool even job is finished!` 
+	To avoid extra charges we will use *autoscale function*. It will scale up VMs based on jobs ammount
 
 
 ## How much it will cost
@@ -110,7 +112,9 @@ Estimates for all and every Azure service are given on [Azure Calculator](https:
 You can find this prices on mentioned [Azure Calculator](https://azure.microsoft.com/en-us/pricing/calculator/), try search "Batch"
  ![Azure Low Priority Price](/assets/users/sergeyperus/AzlowpriorityUSD.png)
 
- In addition to compute resources, you will consume *Storage* and *Bandwidth*. Let's esimate it too:  
+In addition to compute resources, you will consume *Storage* and *Bandwidth*. Let's esimate it too:  
 
-	- Storage - our project (1GB) and rendered frames (20GB) will consume $0.43 per month. We need only 2 days, so about $0.03
-	- Bandwidth - you have to upload your project. Uploading to Azure is completly free. And to download results. It will cost you about $1.31
+- Storage - our project (1GB) and rendered frames (20GB) will consume $0.43 per month. We need only 2 days, so about $0.03
+- Bandwidth - you have to upload your project. Uploading to Azure is completly free. And to download results. It will cost you about $1.31
+
+
