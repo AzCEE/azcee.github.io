@@ -41,7 +41,9 @@ Here you can see your home screen or dashboard. On the left you can find you fav
 
 Let's get Batch service to front and create Batch account
 
+<kbd>
 ![Batch account](/assets/users/sergeyperus/Azportal2.png)
+</kbd>
 
 Here we should create:
 
