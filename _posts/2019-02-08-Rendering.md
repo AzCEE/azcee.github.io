@@ -51,19 +51,26 @@ Here we should create:
 
  ![Batch account creation](/assets/users/sergeyperus/batchaccount.png)
 
- Here i will stay for a while to describe price of resources and estimate cost of potential project
 
- Estimates for all and every Azure service are given on [Azure Calculator](https://azure.microsoft.com/en-us/pricing/calculator/). Actual prices may vary depending upon the date of purchase, currency of payment, and type of agreement you enter with Microsoft. 
+## How much it will cost me
+
+Estimates for all and every Azure service are given on [Azure Calculator](https://azure.microsoft.com/en-us/pricing/calculator/). Actual prices may vary depending upon the date of purchase, currency of payment, and type of agreement you enter with Microsoft. 
  You should contact a Microsoft sales representative for additional information on pricing. I will use it for cost estimation.
  Almost every Azure resource billed by minute, and VM is not an exclusion. 
 
  Suppose, to render all frames of our scene, it will take 5 hours of operation of 50 virtual machines with 32 cores each, for a total of 1600 CPU cores.   
- In addition, we will rent 3rd party licenses (Autodesk® 3ds Max and Chaos Group V-Ray). Of course, you can use your own licenses and build your custom image with it among with all desired plugins. But I will simple scenario in this post - with license rent  
+ In addition, we will rent 3rd party licenses (Autodesk® 3ds Max and Chaos Group V-Ray). Of course, you can use your own licenses and build your custom image with it among with all desired plugins. But I will use simple scenario in this post - with license rent  
 
  According to this information, the cost of compute resources can be about $505:  
 
-	- $260.5 for 5 hours of work 50 x 32 vCPU VMs with WIndows Server license;  
+	- $260.5 for 5 hours of working 50 x 32 vCPU VMs with WIndows Server license;  
 	- $45 for 3ds Max licenses for this VMs;  
 	- $200 for V-Ray licenses for this VMs;  
 
+You can find this prices on mentioned [Azure Calculator](https://azure.microsoft.com/en-us/pricing/calculator/), try search "Batch"
  ![Azure Low Priority Price](/assets/users/sergeyperus/AzlowpriorityUSD.png)
+
+ In addition to compute resources, you will consume *Storage* and *Bandwidth*. Let's esimate it too:  
+
+	- Storage - our project (1GB) and rendered frames (20GB) will consume $0.43 per month. We need only 2 days, so about $0.03
+	- Bandwidth - you have to upload your project. Uploading to Azure is completly free. And to download results. It will cost you about $1.31
