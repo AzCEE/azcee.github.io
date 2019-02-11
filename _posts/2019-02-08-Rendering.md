@@ -59,7 +59,8 @@ Here we should create:
 
  Suppose, to render all frames of our scene, it will take 5 hours of operation of 50 virtual machines with 32 cores each, for a total of 1600 CPU cores.   
  In addition, we will rent 3rd party licenses (Autodesk® 3ds Max and Chaos Group V-Ray). Of course, you can use your own licenses and build your custom image with it among with all desired plugins.But I will simple scenario in this post - with license rent
- According to this information, the cost of compute resources can be about $505:
+ According to this information, the cost of compute resources can be about $505:  
+
 	- $260.5 for 5 hours of work 50 x 32 vCPU VMs with WIndows Server license;  
 	- $45 for 3ds Max licenses for this VMs;  
 	- $200 for V-Ray licenses for this VMs;  
