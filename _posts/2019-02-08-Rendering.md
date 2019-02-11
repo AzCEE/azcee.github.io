@@ -53,6 +53,28 @@ Here we should create:
 
  ![Batch account creation](/assets/users/sergeyperus/batchaccount.png)
 
+ Leave othere parametrs by default and click **Create**  
+
+ Now its time to create support request. No, we did not break something already :). Issue is that by default everyone have a limit for available resources to prevent the use of huge resources unknowingly.
+ But we know what we are doing, right?. Our ambitions are far below 100 default cores.  
+ Navigate to **Help + support** on the left. Click **New support request** and fill it:  
+
+ 
+	- *Issue type* - Service and subscription limits (quotas)
+	- *Subscription* - Choose your subscription
+	- *Quota type* - Choose **Batch**.  
+
+Click Next.  
+Click *Provide Details* and choose location of your Batch account and **Low-priority cores** as *Resources*, as well as set *New Limit*  to **1600** cores. You can ask for more if you want, up to hundreds of thousands
+Choose *Preferred contact method* and click Next
+
+ ![Service request](/assets/users/sergeyperus/AzSupport.png)
+
+
+
+
+
+ In about a minute, navigate to Batch account group on the left, click newly created batch account
 
 ## How much it will cost me
 
