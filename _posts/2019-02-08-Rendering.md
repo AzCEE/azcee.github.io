@@ -28,8 +28,8 @@ With Azure, you can engage thousands CPU cores with per-minute billing, automate
 You can easily submit a few frames to estimate total cost and time. You even can use your own software and licenses, or rent it on a per-core per-minute rate (for 3DMax and V-Ray for example).
 You can use two types of VM:  
 
-	**Dedicated**. This VMs will be available to you 100% time you need it
-	**Low Priority**. This VMs are not guaranteed. Based on plans and demand, they can disapear/reapear at any time. And they will cost you 2.5 times cheaper than **Dedicated**. When you need huge ammount of parallel vCPU, it is a perfect resource
+**Dedicated**. This VMs will be available to you 100% time you need it
+**Low Priority**. This VMs are not guaranteed. It is a surplus power, based on plans and demand, they can disapear/reapear at any time. And this VMs will cost you 2.5 times cheaper than **Dedicated**. When you need huge ammount of parallel vCPU, it is a perfect resource
 
 And, of course, you don't have to pay to 3rd party provider doing this job. So, let's rock!
 
