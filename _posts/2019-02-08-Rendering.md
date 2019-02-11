@@ -45,8 +45,9 @@ Let's get Batch service to front and create Batch account
 
 Here we should create:
 
- - *Resource group*. It will be used as a logical collection of assets for easy monitoring, access control, and for more effective management of their costs
+ - *Resource group*. It will be used as a logical collection of assets for easy monitoring, access control, and for more effective management of their costs. Name it, for example, *Rendering*
  - *Storage account*. Choose Account kind as **StorageV2**. We will use it for storing our scene file/textures, as well as results.
+ - *Location*. You can choose any region. But according to Azure Price Calculator, our desired VM **Low Priority F32s V2** 
 
  ![Batch account creation](/assets/users/sergeyperus/batchaccount.png)
 
