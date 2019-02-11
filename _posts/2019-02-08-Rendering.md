@@ -30,9 +30,15 @@ And, of course, you don't have to pay to 3rd party doing this job. So, let's roc
 
 ## How
 
+This part will be divided on two - how to setup Azure part (probably you will need it once for all your rendering project) and Application part (you will use it every rendering project)
+
+### Azure part 
+
 First of all, you need an Azure subscription. You can get free trial with $200 [here](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/). In order to rent 3rd party licenses (like Autodesk or Chaos V-Ray), you can use your card, because you cannot pay for it with Microsoft credit.
 And of course you can use your existing Azure subscription, many companies have it already - just ask your IT for it.
-I will explain when and how much you have to pay
+
+After this part i will explain how much it will cost you
+
 
 So, you have a subscription. Now you need to login to [Azure portal](https://portal.azure.com).
 Here you can see your home screen or dashboard. On the left you can find you favourite service groups (2) and you can customize it with All services (1). 
@@ -41,42 +47,52 @@ Here you can see your home screen or dashboard. On the left you can find you fav
 
 Let's get Batch service to front and create Batch account
 
-<kbd>
 ![Batch account](/assets/users/sergeyperus/Azportal2.png)
-</kbd>
 
 Here we should create:
 
  - *Resource group*. It will be used as a logical collection of assets for easy monitoring, access control, and for more effective management of their costs. Name it, for example, *Rendering*
- - *Storage account*. Choose Account kind as **StorageV2**. We will use it for storing our scene file/textures, as well as results.
+ - *Storage account*. Select Account kind as **StorageV2**. We will use it for storing our scene file/textures, as well as results.
  - *Location*. You can choose any region. But according to [Azure Price Calculator](https://azure.microsoft.com/en-us/pricing/calculator/#batch5c16533f-472c-43f3-b52d-3413fc585f11), our desired VM **Low Priority F32s V2** will cost less in EastUS datacenter
 
  ![Batch account creation](/assets/users/sergeyperus/batchaccount.png)
 
  Leave othere parametrs by default and click **Create**  
 
- Now its time to create support request. No, we did not break something already :). Issue is that by default everyone have a limit for available resources to prevent the use of huge resources unknowingly.
- But we know what we are doing, right?. Our ambitions are far below 100 default cores.  
- Navigate to **Help + support** on the left. Click **New support request** and fill it:  
+Now its time to create support request. No, we did not break something already :). Issue is that by default everyone have a limit for available resources to prevent the use of huge resources unknowingly.
+But we know what we are doing, right? Our ambitions are far below 100 default cores.  
+Navigate to **Help + support** on the left. Click **New support request** and fill it:  
 
- 
-	- *Issue type* - Service and subscription limits (quotas)
-	- *Subscription* - Choose your subscription
-	- *Quota type* - Choose **Batch**.  
+- *Issue type* - Service and subscription limits (quotas)
+- *Subscription* - Select your subscription
+- *Quota type* - Select **Batch**.  
 
 Click Next.  
-Click *Provide Details* and choose location of your Batch account and **Low-priority cores** as *Resources*, as well as set *New Limit*  to **1600** cores. You can ask for more if you want, up to hundreds of thousands
-Choose *Preferred contact method* and click Next
 
- ![Service request](/assets/users/sergeyperus/AzSupport.png)
+Click *Provide Details* and select location of your Batch account and **Low-priority cores** as *Resources*, as well as set *New Limit*  to **1600** cores. You can ask for more if you want, up to hundreds of thousands. Click *Save and continue* below    
+
+Choose *Preferred contact method* and click *Next: Review + create >>*
+
+![Service request](/assets/users/sergeyperus/AzSupport.png)  
+
+In a few hours you can receive an email asked to provide **Batch Account Name** and **VM Type**. Reply with your Batch account name and VM type **FSv2** as per this example  
+
+### Application part
+
+Now it's time to render our first project. You can do it using simple native [Batch Explorer application](https://azure.github.io/BatchExplorer/). In this case you do not have to have 3ds Max installed, so you can render complex project even using tiny PC. 
+Or you can install additional [plugin](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max) for 3ds Max application and submit you project in a native way. I will show the first option
+
+After installing the Batch Explorer, you need to login to your Azure account and select your Batch account.  
+
+### Creating compute pool
+
+Navigate to *Pools* on the left, our pool list is empty. Click **+** above and let's create out first pool  
+
+	- *ID* and *Display name* is basicaly a name of your pool;   
+	- *Scale* is a principle of poll scaling. In case of *Manual* mode you have to put number of VMs befor rendering and stop it after the process. We will use autoscale 
 
 
-
-
-
- In about a minute, navigate to Batch account group on the left, click newly created batch account
-
-## How much it will cost me
+## How much it will cost
 
 Estimates for all and every Azure service are given on [Azure Calculator](https://azure.microsoft.com/en-us/pricing/calculator/). Actual prices may vary depending upon the date of purchase, currency of payment, and type of agreement you enter with Microsoft. 
  You should contact a Microsoft sales representative for additional information on pricing. I will use it for cost estimation.
