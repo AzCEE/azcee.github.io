@@ -28,7 +28,7 @@ With Azure, you can engage thousands CPU cores with per-minute billing, automate
 You can easily submit a few frames to estimate total cost and time. You even can use your own software and licenses, or rent it on a per-core per-minute rate (for 3DMax and V-Ray for example).
 You can use two types of VM:  
 
-**Dedicated**. This VMs will be available to you 100% time you need it
+**Dedicated**. This VMs will be available to you 100% time you need it.  
 **Low Priority**. This VMs are not guaranteed. It is a surplus power, based on plans and demand, they can disapear/reapear at any time. And this VMs will cost you 2.5 times cheaper than **Dedicated**. When you need huge ammount of parallel vCPU, it is a perfect resource
 
 And, of course, you don't have to pay to 3rd party provider doing this job. So, let's rock!
@@ -93,8 +93,8 @@ After installing the Batch Explorer, you need to login to your Azure account and
 
 Navigate to *Pools* on the left, our pool list is empty. You can use Autopool for each rendering, but I prefer to have my own, with all plugins I need. Click **"+"** above and let's create out first pool  
 
-- *ID* and *Display name* is basicaly a name of your pool
-- *Scale* is a principle of pool scaling. In case of **Manual** mode you have to put number of VMs befor rendering and stop it after the process
+1) *ID* and *Display name* is basicaly a name of your pool
+2) *Scale* is a principle of pool scaling. In case of **Manual** mode you have to put number of VMs befor rendering and stop it after the process
 Very important - `you have to stop VMs in pool after job, otherwise you will be billed for all running VMs in pool even job is finished!`  
 To avoid extra charges we will use **autoscale function**. It will scale up VMs based on tasks ammount
 
@@ -105,7 +105,17 @@ To avoid extra charges we will use **autoscale function**. It will scale up VMs 
 		$TargetLowPriorityNodes=min(maxNumberofVMs, pendingTaskSamples);
 		//$TargetDedicatedNodes=min(maxNumberofVMs, pendingTaskSamples);  
 
-In this formula you should change **maxNumberofVMs** parametr to desired number of VM. I will describe how to understand optimal number of VM later
+In this formula you should change **maxNumberofVMs** parametr to desired number of VM. I will describe how to understand optimal number of VM later  
+
+3) Next, you have to select OS Image. I choose **Rendering WIndows2016** from **Graphics and rendering** group for my 3ds Max project.  
+4) I decided to rent 3rd party application licenses. So, I checked 3ds Max and V-Ray, and do not forget to read EULA and tick a box.  
+5) At this step you have to choose VM size. It could be NC series for GPU rendering or Fs_v2 series for CPU rendering.  
+The most cost-effective, from my experience, is F32s_v2 for CPU.  
+Now, click **Save and close**
+
+Our pool is created and ready for rendering. But in my case, some 3ds Max libraries were missing (Multiscatter and CityTraffic). So, let's add them.
+
+1) 
 
 ## How much it will cost
 
