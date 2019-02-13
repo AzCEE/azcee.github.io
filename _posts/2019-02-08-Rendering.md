@@ -62,7 +62,7 @@ Here we should create:
 
  ![Batch account creation](/assets/users/sergeyperus/batchaccount.png)
 
- Leave othere parametrs by default and click **Create**  
+ Leave other parametrs by default and click **Create**  
 
 Now its time to create support request. No, we did not break something already :). Issue is that by default everyone have a limit for available resources to prevent the use of huge resources unknowingly.
 But we know what we are doing, right? Our ambitions are far below 100 default cores.  
@@ -113,9 +113,51 @@ In this formula you should change **maxNumberofVMs** parametr to desired number 
 The most cost-effective, from my experience, is F32s_v2 for CPU.  
 Now, click **Save and close**
 
-Our pool is created and ready for rendering. But in my case, some 3ds Max libraries were missing (Multiscatter and CityTraffic). So, let's add them.
+Our pool is created and ready for rendering. But in my case, some 3ds Max plug-ins were missing (Multiscatter and CityTraffic). So, let's add them. Also, 
+here I will show how to install automatically GPU and CUDA drivers on NC series VM
 
-1) 
+#### Additional plug-ins
+Both my plugins do not require additional license for rendering node. So all I have do to is to copy relevant dlo's to the Plugin folder. 
+First, i need to made a zip archive with both files. I will name it *3dsmaxplugins.zip*. Next, I will create a package in *Batch Explorer* with same name
+and *version 1* with this zip attached. 
+
+Now we need to add this application package to our Pool, as well as install it among with GPU drivers.  
+Navigate to out pool -> Configuration and do the following:
+1) In **Start task settings** add this:
+
+		cmd /c "copy %AZ_BATCH_APP_PACKAGE_3dsmaxplugins#1%\\*.* %3DSMAX_2018%\\Plugins\  && install-azure-nc-drivers.cmd Standard_NC6"
+Second part *"&& install-azure-nc-drivers.cmd Standard_NC6"* you should add only when you choose NC series VM for GPU rendering. In case you need CPU rendering with other VM series, ommit it.
+More information about start task you can find [here](https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#start-task)  
+
+2) For GPU rendering you should add **Resource files** to download GPU and CUDA drivers:  
+
+		Blob source - https://raw.githubusercontent.com/Azure/BatchExplorer-data/master/ncj/3dsmax/scripts/install-azure-nc-drivers.cmd
+		File path - install-azure-nc-drivers.cmd
+3) At the end, do not forget to set **User identity** to *Pool user (Admin)*. Otherwise, you will get an error 
+about admin priveledges to install driver. 
+
+Our pool is ready. I want to bring your attention to the fact you do not have to pay for Azure at this point. Pool is ready, but VMs are not running, resources are not in use.  
+Let's render our first project using this pool.  
+
+In *Batch explorer* navigate to *Gallery*. Here you can find ready-to-use templates. Pick *3ds Max* and choose first *Action - VRay or Arnold scene*. Other Action are for [Distributed rendering](https://docs.chaosgroup.com/display/VRAY3MAX/Set+Up+Distributed+Rendering) - 
+when you need to render single huge and complex frame on many servers. 
+
+Next, choose **Run job with existing pool** and fill required and optional fields:  
+
+ - Select newly created pool
+ - Name this job, select 3ds Max version and Renderer
+ - *Input filegroup* - Create new filegroup for storing our scene. Here you can create empty group or immediately add the necessary folders and files. It will upload it to Azure and your billing for storage will start (in next part you can find how much)
+ - Click *Input filegroup sas* and it will populate automaticaly
+ - Pick *Scene file* uploaded on previous step
+ - *Frame start* and *Frame end* can be a range of frames or just single frame
+ - *Outputs* - same as *Input filegroup*, used for storing results and logs
+
+![AzureBatch](/assets/users/sergeyperus/batchaccount.png)  
+
+
+
+
+
 
 ## How much it will cost
 
