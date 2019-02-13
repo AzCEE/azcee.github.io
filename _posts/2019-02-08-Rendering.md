@@ -149,10 +149,14 @@ Next, choose **Run job with existing pool** and fill required and optional field
  - *Input filegroup* - Create new filegroup for storing our scene. Here you can create empty group or immediately add the necessary folders and files. It will upload it to Azure and your billing for storage will start (in next part you can find how much)
  - Click *Input filegroup sas* and it will populate automaticaly
  - Pick *Scene file* uploaded on previous step
- - *Frame start* and *Frame end* can be a range of frames or just single frame
+ - *Frame start* and *Frame end* can be a range of frames or just single frame. If you need to render tens to hundreds to thousands frames, I sugest to estimate the optimal number of machines and time of rendering the entire project.  
+ Every VM spend about 2-4 minutes (depends on series and size) on warmup, installing drivers and time of first rendering takes 2-4 minutes longer than others. So, I propose to start from rendering only 2 frames, 
+measure time difference between first and second frame and note time of second rendered frame. And use this numbers in this calculator 
  - *Outputs* - same as *Input filegroup*, used for storing results and logs
 
-![AzureBatch](/assets/users/sergeyperus/batchaccount.png)  
+Click *Run and close* will start our project. In a few minutes our pool will start scaling to the number of frames, up to the number we mentioned in autoscale function
+
+![AzureBatch](/assets/users/sergeyperus/Newjob.png)  
 
 
 
