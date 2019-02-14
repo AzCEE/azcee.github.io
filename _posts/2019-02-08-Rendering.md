@@ -105,7 +105,8 @@ To avoid extra charges we will use **autoscale function**. It will scale up VMs 
 		$TargetLowPriorityNodes=min(maxNumberofVMs, pendingTaskSamples);
 		//$TargetDedicatedNodes=min(maxNumberofVMs, pendingTaskSamples);  
 
-In this formula you should change **maxNumberofVMs** parametr to desired number of VM. I will describe how to understand optimal number of VM later  
+In this formula you should change **maxNumberofVMs** parametr to desired number of VM. I will describe how to understand optimal number of VM later. 
+More about Batch pool automatic scaling can be found [here] (https://docs.microsoft.com/en-us/azure/batch/batch-automatic-scaling)
 
 3) Next, you have to select OS Image. I choose **Rendering WIndows2016** from **Graphics and rendering** group for my 3ds Max project.  
 4) I decided to rent 3rd party application licenses. So, I checked 3ds Max and V-Ray, and do not forget to read EULA and tick a box.  
@@ -157,6 +158,25 @@ measure time difference between first and second frame and note time of second r
 Click *Run and close* will start our project. In a few minutes our pool will start scaling to the number of frames, up to the number we mentioned in autoscale function
 
 ![AzureBatch](/assets/users/sergeyperus/Newjob.png)  
+
+In a few minutes you can see the heatmap with all active VMs in your pool. Also, you can make remote connection to any node and see what is going on.
+
+![Heatmap](/assets/users/sergeyperus/Heatmap.png)  
+
+Moreover, you can make a remote connection to any VM ang figure out what is going on
+
+![Cpuload](/assets/users/sergeyperus/Cpuload.png)  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
