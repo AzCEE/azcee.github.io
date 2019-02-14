@@ -161,11 +161,11 @@ Click *Run and close* will start our project. In a few minutes our pool will sta
 
 In a few minutes you can see the heatmap with all active VMs in your pool. Also, you can make remote connection to any node and see what is going on.
 
-![Heatmap](/assets/users/sergeyperus/Heatmap.png)  
+![Heatmap](/assets/users/sergeyperus/heatmap.png)  
 
 Moreover, you can make a remote connection to any VM ang figure out what is going on
 
-![Cpuload](/assets/users/sergeyperus/Cpuload.png)  
+![Cpuload](/assets/users/sergeyperus/cpuload.png)  
 
 
 
