@@ -29,7 +29,7 @@ Some useful links for this service in Azure
 * Publisher - portal.azure-api.net/admin
 * Developer - portal.azure-api.net
 
-![Supported identity providers](/assets/users/erudinsky/supported-identity-providers.png)
+![Supported identity providers](/assets/users/erudinsky/api-management/supported-identity-providers.png)
 
 ## Monitoring and Analytics
 
