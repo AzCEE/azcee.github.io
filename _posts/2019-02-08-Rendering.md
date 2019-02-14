@@ -10,28 +10,27 @@ featured: true
 	
 Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. After creating a model, you want to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position.
 This image synthesis process is called rendering. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server.
-In our example, rendering 1 frame takes 30 min
 
 Model and image can appear like this:
 
 ![Model and render](/assets/users/sergeyperus/model-and-frame.png)
 
-Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will take you 7500x30 = 156 `days`.
-Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable
+In our example, rendering 1 frame takes 30 min. Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will take you 7500x30 = 156 `days`.
+Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable.  
 
-Of cource, modern market is full of rendering service providers who can help you. 
-This post is how to build you own render farm and why this is a good idea
+Of cource, modern market is full of rendering service providers who can help you.  
+This post is how to build you own render farm and why this is a good idea.
 
 ## Why 
 
 With Azure, you can engage thousands CPU cores with per-minute billing, automate rendering and control process by your own.
-You can easily submit a few frames to estimate total cost and time. You even can use your own software and licenses, or rent it on a per-core per-minute rate (for 3DMax and V-Ray for example).
-You can use two types of VM:  
+You can easily submit a few frames to estimate total cost and time. You even can use your own software and licenses, or rent it on a per-core per-minute rate (for 3DMax and V-Ray for example).  
+In addition, there are two tiers of VMs you can use for this task:
 
 **Dedicated**. This VMs will be available to you 100% time you need it.  
-**Low Priority**. This VMs are not guaranteed. It is a surplus power, based on plans and demand, they can disapear/reapear at any time. And this VMs will cost you 2.5 times cheaper than **Dedicated**. When you need huge ammount of parallel vCPU, it is a perfect resource
-
-And, of course, you don't have to pay to 3rd party provider doing this job. So, let's rock!
+**Low Priority**. This VMs are not guaranteed. It is a surplus power, based on plans and demand, they can disapear/reapear at any time. And this VMs will cost you `2.5 times cheaper` than **Dedicated**. When you need huge ammount of parallel vCPU, it is a perfect resource.   
+According to my customers, this approach is 40-60% cheaper than market average, 2-7 times faster and you can control all process.
+So, why you have to pay to 3rd party provider doing this job?. Let's rock!
 
 ## How
 
@@ -85,11 +84,10 @@ In a few hours you can receive an email asked to provide **Batch Account Name** 
 ### Application part
 
 Now it's time to render our first project. You can do it using simple native [Batch Explorer application](https://azure.github.io/BatchExplorer/). In this case you do not have to have 3ds Max installed, so you can render complex project even using tiny PC. 
-Or you can install additional [plugin](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max) for 3ds Max application and submit you project in a native way. I will show the first option
+Or you can install additional [plugin](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max) for 3ds Max application and submit you project in a native way. I will show the first option.  
 
-After installing the Batch Explorer, you need to login to your Azure account and select your Batch account.  
-
-### Creating compute pool
+After installing and running the Batch Explorer, you need to login to your Azure account and select your Batch account.  
+Firstm create *Compute Pool*:  
 
 Navigate to *Pools* on the left, our pool list is empty. You can use Autopool for each rendering, but I prefer to have my own, with all plugins I need. Click **"+"** above and let's create out first pool  
 
@@ -117,16 +115,16 @@ Now, click **Save and close**
 Our pool is created and ready for rendering. But in my case, some 3ds Max plug-ins were missing (Multiscatter and CityTraffic). So, let's add them. Also, 
 here I will show how to install automatically GPU and CUDA drivers on NC series VM
 
-#### Additional plug-ins
+##### Additional plug-ins
 Both my plugins do not require additional license for rendering node. So all I have do to is to copy relevant dlo's to the Plugin folder. 
 First, i need to made a zip archive with both files. I will name it *3dsmaxplugins.zip*. Next, I will create a package in *Batch Explorer* with same name
 and *version 1* with this zip attached. 
 
 Now we need to add this application package to our Pool, as well as install it among with GPU drivers.  
-Navigate to out pool -> Configuration and do the following:
+Navigate to out pool -> Configuration and do the following:  
 1) In **Start task settings** add this:
 
-		cmd /c "copy %AZ_BATCH_APP_PACKAGE_3dsmaxplugins#1%\\*.* %3DSMAX_2018%\\Plugins\  && install-azure-nc-drivers.cmd Standard_NC6"
+		cmd /c "copy %AZ_BATCH_APP_PACKAGE_3dsmaxplugins#1%\\*.* %3DSMAX_2018%\\Plugins\  && install-azure-nc-drivers.cmd Standard_NC6"  
 Second part *"&& install-azure-nc-drivers.cmd Standard_NC6"* you should add only when you choose NC series VM for GPU rendering. In case you need CPU rendering with other VM series, ommit it.
 More information about start task you can find [here](https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#start-task)  
 
@@ -159,15 +157,14 @@ Click *Run and close* will start our project. In a few minutes our pool will sta
 
 ![AzureBatch](/assets/users/sergeyperus/Newjob.png)  
 
-In a few minutes you can see the heatmap with all active VMs in your pool. Also, you can make remote connection to any node and see what is going on.
-
+In a few minutes you can see the heatmap with all active VMs in your pool.
 ![Heatmap](/assets/users/sergeyperus/heatmap.png)  
 
 Moreover, you can make a remote connection to any VM ang figure out what is going on
 
 ![Cpuload](/assets/users/sergeyperus/cpuload.png)  
 
-
+Now, its time 
 
 
 
