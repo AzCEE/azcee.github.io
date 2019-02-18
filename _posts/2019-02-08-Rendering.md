@@ -122,9 +122,11 @@ and *version 1* with this zip attached.
 
 Now we need to add this application package to our Pool, as well as install it among with GPU drivers.  
 Navigate to out pool -> Configuration and do the following:  
+
 1) In **Start task settings** add this:
 
 		cmd /c "copy %AZ_BATCH_APP_PACKAGE_3dsmaxplugins#1%\\*.* %3DSMAX_2018%\\Plugins\  && install-azure-nc-drivers.cmd Standard_NC6"  
+  
 Second part *"&& install-azure-nc-drivers.cmd Standard_NC6"* you should add only when you choose NC series VM for GPU rendering. In case you need CPU rendering with other VM series, ommit it.
 More information about start task you can find [here](https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#start-task)  
 
@@ -133,7 +135,7 @@ More information about start task you can find [here](https://docs.microsoft.com
 		Blob source - https://raw.githubusercontent.com/Azure/BatchExplorer-data/master/ncj/3dsmax/scripts/install-azure-nc-drivers.cmd
 		File path - install-azure-nc-drivers.cmd
 3) At the end, do not forget to set **User identity** to *Pool user (Admin)*. Otherwise, you will get an error 
-about admin priveledges to install driver. 
+about admin priveledges needed to install driver. 
 
 Our pool is ready. I want to bring your attention to the fact you do not have to pay for Azure at this point. Pool is ready, but VMs are not running, resources are not in use.  
 Let's render our first project using this pool.  
@@ -149,8 +151,8 @@ Next, choose **Run job with existing pool** and fill required and optional field
  - Click *Input filegroup sas* and it will populate automaticaly
  - Pick *Scene file* uploaded on previous step
  - *Frame start* and *Frame end* can be a range of frames or just single frame. If you need to render tens to hundreds to thousands frames, I sugest to estimate the optimal number of machines and time of rendering the entire project.  
- Every VM spend about 2-4 minutes (depends on series and size) on warmup, installing drivers and time of first rendering takes 2-4 minutes longer than others. So, I propose to start from rendering only 2 frames, 
-measure time difference between first and second frame and note time of second rendered frame. And use this numbers in this calculator 
+ Every VM spend about 2-4 minutes (depends on series and size) on warmup and installing drivers, so time of first rendering takes 2-4 minutes longer than others. So, my proposition is to start with rendering only 2 frames, 
+measure time difference between first and second frame and note time of second rendered frame. This information will help you to realize the optimal quantity of compute nodes needed to render whole project. 
  - *Outputs* - same as *Input filegroup*, used for storing results and logs
 
 Click *Run and close* will start our project. In a few minutes our pool will start scaling to the number of frames, up to the number we mentioned in autoscale function
@@ -164,7 +166,10 @@ Moreover, you can make a remote connection to any VM ang figure out what is goin
 
 ![Cpuload](/assets/users/sergeyperus/cpuload.png)  
 
-Now, its time 
+You also can check *Jobs* menu. Here you can see all your projects with all tasks (frames) statistics. 
+And in Data section you can download results from Output folder once jobs done
+
+Do not hesitate to ask questions if any!
 
 
 
