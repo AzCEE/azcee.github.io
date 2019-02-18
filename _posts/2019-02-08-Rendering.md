@@ -8,14 +8,14 @@ featured: true
 
 ---
 	
-Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. After creating a model, you want to obtain a photorealistic image of it. This can be done by applying all textures, materials, light sources and camera position.
-This image synthesis process is called rendering. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server.
+Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. After creating a model, you want to obtain a photorealistic image of it. This process of applying all textures, materials, light sources and camera position is called *rendering*.
+. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server.
 
 Model and image can appear like this:
 
 ![Model and render](/assets/users/sergeyperus/model-and-frame.png)
 
-In our example, rendering 1 frame takes 30 min. Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will take you 7500x30 = 156 `days`.
+In my example, rendering of 1 frame takes 30 min. Now you need to create a short 5 minute movie. With 25 fps, you have to render 25x60x5 = 7500 frames. It will take you 7500x30 = 156 `days`.
 Not an option to do it on your own, right? And even you can double your equimpent - 2.5 month still far from acceptable.  
 
 Of cource, modern market is full of rendering service providers who can help you.  
@@ -30,18 +30,17 @@ In addition, there are two tiers of VMs you can use for this task:
 **Dedicated**. This VMs will be available to you 100% time you need it.  
 **Low Priority**. This VMs are not guaranteed. It is a surplus power, based on plans and demand, they can disapear/reapear at any time. And this VMs will cost you `2.5 times cheaper` than **Dedicated**. When you need huge ammount of parallel vCPU, it is a perfect resource.   
 According to my customers, this approach is 40-60% cheaper than market average, 2-7 times faster and you can control all process.
-So, why you have to pay to 3rd party provider doing this job?. Let's rock!
+So, why you have to pay to 3rd party provider doing this job? Let's rock!
 
 ## How
 
 This part will be divided on two - how to setup Azure part (probably you will need it once for all your rendering project) and Application part (you will use it every rendering project)
+After this part I will explain how much it will cost you.
 
 ### Azure part 
 
 First of all, you need an Azure subscription. You can get free trial with $200 [here](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/). In order to rent 3rd party licenses (like Autodesk or Chaos V-Ray), you can use your card, because you cannot pay for it with Microsoft credit.
-And of course you can use your existing Azure subscription, many companies have it already - just ask your IT for it.
-
-After this part i will explain how much it will cost you
+And of course you can use your existing Azure subscription, many companies already have it - just ask your IT about it.
 
 
 So, you have a subscription. Now you need to login to [Azure portal](https://portal.azure.com).
@@ -64,7 +63,7 @@ Here we should create:
  Leave other parametrs by default and click **Create**  
 
 Now its time to create support request. No, we did not break something already :). Issue is that by default everyone have a limit for available resources to prevent the use of huge resources unknowingly.
-But we know what we are doing, right? Our ambitions are far below 100 default cores.  
+But we know what we are doing, right? Our ambitions are far above 100 default cores.  
 Navigate to **Help + support** on the left. Click **New support request** and fill it:  
 
 - *Issue type* - Service and subscription limits (quotas)
@@ -79,7 +78,7 @@ Choose *Preferred contact method* and click *Next: Review + create >>*
 
 ![Service request](/assets/users/sergeyperus/AzSupport.png)  
 
-In a few hours you can receive an email asked to provide **Batch Account Name** and **VM Type**. Reply with your Batch account name and VM type **FSv2** as per this example  
+In a few hours you can receive an email asked to provide **Batch Account Name** and **VM Type**. Reply with your Batch account name and VM type **FSv2** as per this example.  
 
 ### Application part
 
@@ -87,9 +86,9 @@ Now it's time to render our first project. You can do it using simple native [Ba
 Or you can install additional [plugin](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max) for 3ds Max application and submit you project in a native way. I will show the first option.  
 
 After installing and running the Batch Explorer, you need to login to your Azure account and select your Batch account.  
-Firstm create *Compute Pool*:  
+First, create *Compute Pool*:  
 
-Navigate to *Pools* on the left, our pool list is empty. You can use Autopool for each rendering, but I prefer to have my own, with all plugins I need. Click **"+"** above and let's create out first pool  
+Navigate to *Pools* on the left, our pool list is empty. You can use Autopool for each rendering, but I prefer to have my own, with all plugins I need. Click **"+"** above and let's create out first pool.  
 
 1) *ID* and *Display name* is basicaly a name of your pool
 2) *Scale* is a principle of pool scaling. In case of **Manual** mode you have to put number of VMs befor rendering and stop it after the process
