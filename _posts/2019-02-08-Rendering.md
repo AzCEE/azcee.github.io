@@ -169,22 +169,6 @@ Moreover, you can make a remote connection to any VM ang figure out what is goin
 You also can check *Jobs* menu. Here you can see all your projects with all tasks (frames) statistics. 
 And in Data section you can download results from Output folder once jobs done
 
-Do not hesitate to ask questions if any!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## How much it will cost
 
 Estimates for all and every Azure service are given on [Azure Calculator](https://azure.microsoft.com/en-us/pricing/calculator/). Actual prices may vary depending upon the date of purchase, currency of payment, and type of agreement you enter with Microsoft. 
@@ -205,7 +189,8 @@ You can find this prices on mentioned [Azure Calculator](https://azure.microsoft
 
 In addition to compute resources, you will consume *Storage* and *Bandwidth*. Let's esimate it too:  
 
-- Storage - our project (1GB) and rendered frames (20GB) will consume $0.43 per month. We need only 2 days, so about $0.03
-- Bandwidth - you have to upload your project. Uploading to Azure is completly free. And to download results. It will cost you about $1.31
+- Storage - our project (1GB) and rendered frames (20GB) will consume $0.43 per month. We need only 2 days, so its about $0.03
+- Bandwidth - you have to upload your project. Uploading to Azure is completely free. Downloading will cost you about $1.31
 
 
+Do not hesitate to ask questions in comments if any!
