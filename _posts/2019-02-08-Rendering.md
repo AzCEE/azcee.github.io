@@ -86,14 +86,15 @@ Now it's time to render our first project. You can do it using simple native [Ba
 Or you can install additional [plugin](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max) for 3ds Max application and submit you project in a native way. I will show the first option.  
 
 After installing and running the Batch Explorer, you need to login to your Azure account and select your Batch account.  
+
 First, create *Compute Pool*:  
 
 Navigate to *Pools* on the left, our pool list is empty. You can use Autopool for each rendering, but I prefer to have my own, with all plugins I need. Click **"+"** above and let's create out first pool.  
 
 1) *ID* and *Display name* is basicaly a name of your pool
-2) *Scale* is a principle of pool scaling. In case of **Manual** mode you have to put number of VMs befor rendering and stop it after the process
-Very important - `you have to stop VMs in pool after job, otherwise you will be billed for all running VMs in pool even job is finished!`  
-To avoid extra charges we will use **autoscale function**. It will scale up VMs based on tasks ammount
+2) *Scale* is a principle of pool scaling. In case of **Manual** mode you have to put number of VMs before rendering and scale it to zero after the process. 
+Very important - `you have to scale down to zero VMs in pool after job, otherwise you will be billed for all running VMs in pool even job is finished!`  
+To avoid extra charges we will use **autoscale function**. It will scale up VMs based on tasks ammount. Here is my formula:  
 
 		startingNumberOfVMs = 0;
 		maxNumberofVMs = 50;
@@ -103,13 +104,13 @@ To avoid extra charges we will use **autoscale function**. It will scale up VMs 
 		//$TargetDedicatedNodes=min(maxNumberofVMs, pendingTaskSamples);  
 
 In this formula you should change **maxNumberofVMs** parametr to desired number of VM. I will describe how to understand optimal number of VM later. 
-More about Batch pool automatic scaling can be found [here] (https://docs.microsoft.com/en-us/azure/batch/batch-automatic-scaling)
+More about Batch pool automatic scaling can be found [here](https://docs.microsoft.com/en-us/azure/batch/batch-automatic-scaling)
 
 3) Next, you have to select OS Image. I choose **Rendering WIndows2016** from **Graphics and rendering** group for my 3ds Max project.  
 4) I decided to rent 3rd party application licenses. So, I checked 3ds Max and V-Ray, and do not forget to read EULA and tick a box.  
-5) At this step you have to choose VM size. It could be NC series for GPU rendering or Fs_v2 series for CPU rendering.  
+5) At this step you have to choose VM size. It could be NC series for GPU rendering or any other series for CPU rendering.  
 The most cost-effective, from my experience, is F32s_v2 for CPU.  
-Now, click **Save and close**
+Now, click **Save and close**. If you pool is scaled to zero, you do not have to pay for it. 
 
 Our pool is created and ready for rendering. But in my case, some 3ds Max plug-ins were missing (Multiscatter and CityTraffic). So, let's add them. Also, 
 here I will show how to install automatically GPU and CUDA drivers on NC series VM
@@ -120,7 +121,7 @@ First, i need to made a zip archive with both files. I will name it *3dsmaxplugi
 and *version 1* with this zip attached. 
 
 Now we need to add this application package to our Pool, as well as install it among with GPU drivers.  
-Navigate to out pool -> Configuration and do the following:  
+Navigate to out *Pool* -> *Configuration* and do the following:  
 
 1) In **Start task settings** add this:
 
@@ -132,8 +133,9 @@ More information about start task you can find [here](https://docs.microsoft.com
 2) For GPU rendering you should add **Resource files** to download GPU and CUDA drivers:  
 
 		Blob source - https://raw.githubusercontent.com/Azure/BatchExplorer-data/master/ncj/3dsmax/scripts/install-azure-nc-drivers.cmd
-		File path - install-azure-nc-drivers.cmd
-3) At the end, do not forget to set **User identity** to *Pool user (Admin)*. Otherwise, you will get an error 
+		File path - install-azure-nc-drivers.cmd  
+
+At the end, do not forget to set **User identity** to *Pool user (Admin)*. Otherwise, you will get an error 
 about admin priveledges needed to install driver. 
 
 Our pool is ready. I want to bring your attention to the fact you do not have to pay for Azure at this point. Pool is ready, but VMs are not running, resources are not in use.  
