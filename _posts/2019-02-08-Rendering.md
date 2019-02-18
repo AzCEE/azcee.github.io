@@ -110,7 +110,7 @@ More about Batch pool automatic scaling can be found [here](https://docs.microso
 4) I decided to rent 3rd party application licenses. So, I checked 3ds Max and V-Ray, and do not forget to read EULA and tick a box.  
 5) At this step you have to choose VM size. It could be NC series for GPU rendering or any other series for CPU rendering.  
 The most cost-effective, from my experience, is F32s_v2 for CPU.  
-Now, click **Save and close**. If you pool is scaled to zero, you do not have to pay for it. 
+Now, click **Save and close**.  
 
 Our pool is created and ready for rendering. But in my case, some 3ds Max plug-ins were missing (Multiscatter and CityTraffic). So, let's add them. Also, 
 here I will show how to install automatically GPU and CUDA drivers on NC series VM
@@ -139,7 +139,8 @@ At the end, do not forget to set **User identity** to *Pool user (Admin)*. Other
 about admin priveledges needed to install driver. 
 
 Our pool is ready. I want to bring your attention to the fact you do not have to pay for Azure at this point. Pool is ready, but VMs are not running, resources are not in use.  
-Let's render our first project using this pool.  
+
+Now, let's render our first project using this pool.  
 
 In *Batch explorer* navigate to *Gallery*. Here you can find ready-to-use templates. Pick *3ds Max* and choose first *Action - VRay or Arnold scene*. Other Action are for [Distributed rendering](https://docs.chaosgroup.com/display/VRAY3MAX/Set+Up+Distributed+Rendering) - 
 when you need to render single huge and complex frame on many servers. 
@@ -152,9 +153,9 @@ Next, choose **Run job with existing pool** and fill required and optional field
  - Click *Input filegroup sas* and it will populate automaticaly
  - Pick *Scene file* uploaded on previous step
  - *Frame start* and *Frame end* can be a range of frames or just single frame. If you need to render tens to hundreds to thousands frames, I sugest to estimate the optimal number of machines and time of rendering the entire project.  
- Every VM spend about 2-4 minutes (depends on series and size) on warmup and installing drivers, so time of first rendering takes 2-4 minutes longer than others. So, my proposition is to start with rendering only 2 frames, 
+ Every VM spend about 2-4 minutes (depends on series and size) on warmup and installing drivers, so time of first rendering on each VM takes 2-4 minutes longer than others. My proposition is to start with rendering only 2 frames, 
 measure time difference between first and second frame and note time of second rendered frame. This information will help you to realize the optimal quantity of compute nodes needed to render whole project. 
- - *Outputs* - same as *Input filegroup*, used for storing results and logs
+ - *Outputs* - like an *Input filegroup*, but used for storing results and logs
 
 Click *Run and close* will start our project. In a few minutes our pool will start scaling to the number of frames, up to the number we mentioned in autoscale function
 
@@ -168,7 +169,7 @@ Moreover, you can make a remote connection to any VM ang figure out what is goin
 ![Cpuload](/assets/users/sergeyperus/cpuload.png)  
 
 You also can check *Jobs* menu. Here you can see all your projects with all tasks (frames) statistics. 
-And in Data section you can download results from Output folder once jobs done
+And in *Data* section you can download results from Output folder once jobs done.
 
 ## How much it will cost
 
@@ -177,7 +178,7 @@ Estimates for all and every Azure service are given on [Azure Calculator](https:
  Almost every Azure resource billed by minute, and VM is not an exclusion. 
 
  Suppose, to render all frames of our scene, it will take 5 hours of operation of 50 virtual machines with 32 cores each, for a total of 1600 CPU cores.   
- In addition, we will rent 3rd party licenses (Autodesk® 3ds Max and Chaos Group V-Ray). Of course, you can use your own licenses and build your custom image with it among with all desired plugins. But I will use simple scenario in this post - with license rent  
+ In addition, we will rent 3rd party licenses (Autodesk® 3ds Max and Chaos Group V-Ray). Of course, you can use your own licenses and build your custom image with it among with all desired plugins. But I will use simple scenario in this post - with license rent.  
 
  According to this information, the cost of compute resources can be about $505:  
 
@@ -185,7 +186,7 @@ Estimates for all and every Azure service are given on [Azure Calculator](https:
 	- $45 for 3ds Max licenses for this VMs;  
 	- $200 for V-Ray licenses for this VMs;  
 
-You can find this prices on mentioned [Azure Calculator](https://azure.microsoft.com/en-us/pricing/calculator/), try search "Batch"
+You can find this prices at mentioned [Azure Calculator](https://azure.microsoft.com/en-us/pricing/calculator/), try search "Batch"
  ![Azure Low Priority Price](/assets/users/sergeyperus/AzlowpriorityUSD.png)
 
 In addition to compute resources, you will consume *Storage* and *Bandwidth*. Let's esimate it too:  
