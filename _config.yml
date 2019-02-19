@@ -23,12 +23,15 @@ authors:
     description: "Azure Apps & Infra TPS"
 
   sergeype:
-    name: sergey
+    name: Sergey
     display_name: Sergey Pechenkin
     gravatar: a9488f7bf8fc60626f7a3cc2f2925941
+    twitter: https://twitter.com/Sergey14836406
     linkedin: https://www.linkedin.com/in/sergey-pechenkin-21994512/
     description: "Azure Apps & Infra TPS"
     
+    Sergey14836406 
+
 
 # Plugins
 plugins: 
