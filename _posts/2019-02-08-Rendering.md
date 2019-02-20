@@ -25,7 +25,7 @@ This post is how to build you own render farm and why this is a good idea.
 
 With Azure, you can engage thousands CPU cores with per-minute billing, automate rendering and control process by your own.
 You can easily submit a few frames to estimate total cost and time. You even can use your own software and licenses, or rent it on a per-core per-minute rate (for 3DMax and V-Ray for example).  
-In addition, it can be 40-70% cheaper and 2-7 times faster than market average, according to my real cases. 
+In addition, it can be `40-70% cheaper` and `2-7 times faster` than market average, according to my real cases. 
 
 So, why you have to pay to 3rd party provider doing this job? Let's rock!
 
