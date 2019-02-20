@@ -27,9 +27,6 @@ With Azure, you can engage thousands CPU cores with per-minute billing, automate
 You can easily submit a few frames to estimate total cost and time. You even can use your own software and licenses, or rent it on a per-core per-minute rate (for 3DMax and V-Ray for example).  
 In addition, it can be 40-70% cheaper and 2-7 times faster than market average, according to my real cases. 
 
-**Dedicated**. This VMs will be available to you 100% time you need it.  
-**Low Priority**. This VMs are not guaranteed. It is a surplus power, based on plans and demand, they can disappear/reappear at any time. And this VMs will cost you `2.5 times cheaper` than **Dedicated**. When you need huge amount of parallel vCPU, it is a perfect resource.   
-According to my customers, this approach is 40-60% cheaper than market average, 2-7 times faster and you can control all process.
 So, why you have to pay to 3rd party provider doing this job? Let's rock!
 
 ## How
@@ -60,10 +57,17 @@ Here we should create:
 
  ![Batch account creation](/assets/users/sergeyperus/batchaccount.png)
 
- Leave other parameters by default and click **Create**  
+ Leave other parameters by default and click **Create**.  
+
+One thing I want to note here - you can use for this purpose two VM types:  
+**Dedicated**. This VMs will be available to you 100% time you need it.  
+**Low Priority**. This VMs are not guaranteed. It is a surplus power, based on plans and demand, they can disappear/reappear at any time. But this VMs will cost you `2.5 times cheaper` than **Dedicated**. When you need huge amount of parallel compute resources, it is a perfect choice.   
+
+I will use **Low Priority** to keep costs low.
 
 Now its time to create support request. No, we did not break something already :). Issue is that by default everyone have a limit for available resources to prevent the use of huge resources unknowingly.
 But we know what we are doing, right? Our ambitions are far above 100 default cores.  
+
 Navigate to **Help + support** on the left. Click **New support request** and fill it:  
 
 - *Issue type* - Service and subscription limits (quotas)
