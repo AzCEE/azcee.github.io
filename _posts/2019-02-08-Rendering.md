@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "3D rendering using Microsoft Azure"
+title:  "3D rendering using Microsoft Azure1"
 author: sergeype
 tags: [ 3dsmax, vray, rendering, azure, batch, lowpriority, hpc, renderfarm ]
 image: assets/users/sergeyperus/pot.png
