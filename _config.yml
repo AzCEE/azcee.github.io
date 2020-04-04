@@ -1,7 +1,7 @@
 # Site
-name: "AzCEE Team pages - Microsoft Azure stories by TSPs"
-description: "AzCEE is a group of creative and passionate enthusiasts and technologists working (or ex-) as Technology Solution Professional (TSP) @Microsoft with core focus on @Azure! We're keen on sharing what we've learnt with anyone in the World!"
-meta_description: "Independently driven blog by members of Azure TSP"
+name: "Azure Guru - Microsoft Azure stories by Cloud Architects"
+description: "Azure Guru is a group of creative and passionate enthusiasts and technologists working (or ex-) @Microsoft with core focus on @Azure! We're keen on sharing what we've learnt with everyone in the World!"
+meta_description: "Independently driven blog by members of Cloud Architects"
 logo: 'assets/images/layout/small-logo.png'
 favicon: 'assets/images/layout/-small-logo.png'
 baseurl:
@@ -20,7 +20,7 @@ authors:
     gravatar: f246b5cca97060fa8bb803b34c9aee2a
     twitter: https://twitter.com/evgenyrudinsky
     linkedin: https://www.linkedin.com/in/evgenyrudinsky/
-    description: "Azure Apps & Infra TSP"
+    description: "Cloud Architect @ Nordcloud"
 
   sergeype:
     name: Sergey
@@ -28,7 +28,7 @@ authors:
     gravatar: a9488f7bf8fc60626f7a3cc2f2925941
     twitter: https://twitter.com/Sergey14836406
     linkedin: https://www.linkedin.com/in/sergey-pechenkin-21994512/
-    description: "Azure Apps & Infra TSP"
+    description: "Cloud Architect @ Microsoft"
     
     
 

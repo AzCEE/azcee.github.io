@@ -9,7 +9,7 @@ featured: true
 ---
 	
 Imagine - you've created a 3d model of your object (interior, mechanism, construction plant etc.) using 3DMax for example. Of course, it can be Blender or Maya or many other tools. After creating a model, you want to get a photorealistic image of it. This process of applying all textures, materials, light sources and camera position is called *rendering*.
-. Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server.
+Depends on complexity of the model, desired quality and size of the outcome picture, it can take hours and days to render just one picture on a creator’s work server.
 
 Model and image can seem like this:
 

@@ -3,7 +3,7 @@ layout: post
 title:  "Build and release Docker Compose using Azure DevOps"
 author: evgeny
 tags: [ docker, Azure, Azure DevOps ]
-image: assets/users/erudinsky/azure-devops.png
+image: assets/users/erudinsky/azure-devops/azure-devops.png
 featured: true
 hidden: true
 ---
