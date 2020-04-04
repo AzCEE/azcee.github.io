@@ -1,3 +1,6 @@
 User-agent: *
-Disallow:
-Sitemap: https://azcee.github.io/sitemap.xml
+Disallow: /?*
+Disallow: /tags/*
+Disallow: /tags/
+Host: https:/azuregu.ru
+Sitemap: https://azuregu.ru/sitemap.xml
