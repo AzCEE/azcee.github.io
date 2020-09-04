@@ -22,7 +22,7 @@ hidden: true
 
 ## Стоимость
 
-Первые 5 ГБ собираемой и хранимой 30 дней информации каждый месяц - бесплатно. Далее - по тарифу 186 рублей за 1ГБ. Здесь и далее все цены я буду брать из [калькулятора Azure](https://azure.microsoft.com/en-us/pricing/calculator/). Подробнее про [ценообразование мони торинга ](https://docs.microsoft.com/ru-ru/azure/azure-monitor/platform/usage-estimated-costs)
+Первые 5 ГБ собираемой и хранимой 30 дней информации каждый месяц - бесплатно. Далее - по тарифу 186 рублей за 1ГБ. Здесь и далее все цены я буду брать из [калькулятора Azure](https://azure.microsoft.com/en-us/pricing/calculator/). Подробнее про [ценообразование мониторинга ](https://docs.microsoft.com/ru-ru/azure/azure-monitor/platform/usage-estimated-costs)
 
 
 
