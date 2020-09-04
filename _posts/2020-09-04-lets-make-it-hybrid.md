@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Build and release Docker Compose using Azure DevOps"
-author: evgeny
-tags: [ docker, Azure, Azure DevOps ]
-image: assets/users/erudinsky/azure-devops/azure-devops.png
+title:  "Использование Azure для локальной инфраструктуры"
+author: sergeype
+tags: [ Azure, Automation, Arc, LogAnalytics, Updates, Monitoring ]
+image: assets/users/sergeyperus/hybrid.png
 featured: true
 hidden: true
 ---
