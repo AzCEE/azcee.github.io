@@ -1,12 +1,47 @@
 ---
 layout: post
-title:  "Использование Azure для локальной инфраструктуры"
+title:  "----В РАЗРАБОТКЕ-------Использование Azure для локальной инфраструктуры"
 author: sergeype
 tags: [ Azure, Automation, Arc, LogAnalytics, Updates, Monitoring ]
 image: assets/users/sergeyperus/hybrid.png
 featured: true
 hidden: true
 ---
+
+Итак, вы не используете облака, у вас все локально, ну максимум немного местного хостинга. 
+Публичные облака - это пока непонятно, опасно, да еще и не нужно. Цель этой статьи - показать, как в вашем случае можно просто, безопасно и бесплатно/недорого быстро получить преимущества от облака Microsoft Azure. Я пошагово буду показывать все этапы, давать ссылки на документацию, показывать результат и стоимость (насколько это возможно)
+
+## Этап первый: мониторинг
+
+# Цель - получить информацию о состоянии систем:
+  - обновления
+  - метрики (CPU/MEM/Disk/Network) и прочие
+  - взаимодействие серверов друг с другом, проблемы участников
+  - централизация хранения логов/системных журналов с возможностью поиска и анализа собранной информации
+
+# Стоимость
+
+Собираемая информация имеет исключительно текстовый характер. Это системные журналы событий и метрики. Первые 5 GB собранной и хранимой 30 дней информации каждый месяц - бесплатно. Далее - по тарифу. Здесь можно почитать подробнее про [ценообразование])https://docs.microsoft.com/ru-ru/azure/azure-monitor/platform/usage-estimated-costs)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 I've been fighting a bit with [some](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker-compose?view=azure-devops) of the Azure DevOps pipeline [tasks](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops) trying to configure end-to-end solution for one of my side project. It is based on a good old Docker Compose and I am pretty happy with how it works in [production](https://docs.docker.com/compose/production/). What I wanted to do is schematically described down below.
 
