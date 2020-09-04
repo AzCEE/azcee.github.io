@@ -23,6 +23,7 @@ hidden: true
 ## Стоимость
 
 Первые 5 ГБ собираемой и хранимой 30 дней информации каждый месяц - бесплатно. Далее - по тарифу 186 рублей за 1ГБ. Здесь и далее все цены я буду брать из [калькулятора Azure](https://azure.microsoft.com/en-us/pricing/calculator/). Подробнее про [ценообразование мониторинга ](https://docs.microsoft.com/ru-ru/azure/azure-monitor/platform/usage-estimated-costs)
+До начала работы сервисы вы скорей всего не знаете - какой объем логов генерят сервера. Поэтому мы сразу ограничим ежедневный объем принимаемой информациию чтоб избежать лишних затрат.
 
 
 
@@ -30,6 +31,7 @@ hidden: true
 
 
 
+<!-- 
 
 
 
@@ -167,3 +169,5 @@ With 1800 free minutes of pipeline per month and 6 minutes of all my stages tota
 Love it!
 
 > All templates are generalized and uploaded to this [<i class="github icon"></i> repository](https://github.com/erudinsky/azure-pipelines).
+
+-->
