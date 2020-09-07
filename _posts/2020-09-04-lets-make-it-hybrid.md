@@ -28,7 +28,7 @@ hidden: true
 
 ## Реализация
 
-1. Создадим [Рабочую Область](https://docs.microsoft.com/ru-ru/azure/azure-monitor/learn/quick-create-workspace) в регионе West Europe 
+1. Создадим [Рабочую Область](https://docs.microsoft.com/ru-ru/azure/azure-monitor/learn/quick-create-workspace) в регионе West Europe. Она будет использована для хранения данных, все остальные сервисы будут опираться на нее. Кроме того, мы сможем вручную посмотреть/поискать/анализировать накопленные данные
 
 ![Image](assets/users/sergeyperus/createlaworkspace.gif)
 
