@@ -28,7 +28,11 @@ hidden: true
 
 ![Image](/assets/users/sergeyperus/networkperformance.gif)
 
-4) 
+4) Мы видим ситуацию с обновлениями - что уже установлено, что выпущено для Microsoft и Linux. Можем запланировать их развертывание по группам серверов и критичности обновлений. Прописать pre- и post- скрипты
+
+![Image](/assets/users/sergeyperus/updatemanagement.gif)
+
+5) 
 
 # Этап первый: мониторинг
 
