@@ -37,7 +37,7 @@ hidden: true
 
 6) Регулярно проводится проверка критичных компонентов (Active Directory и SQL сервера) на соответствие лучшим практикам Microsoft
 
-![Image](/assets/users/sergeyperus/adsqlassessment.gif)
+![Image](/assets/users/sergeyperus/adsqlassessment.png)
 
 7) Есть прямой доступ ко всей базе накопленной информации. Можете искать централизовано любую информацию, строить отчеты и создавать оповещения о критичных, на Ваш взгляд, событиях
 
