@@ -3,7 +3,7 @@ layout: post
 title:  "Использование Azure для локальной инфраструктуры"
 author: sergeype
 tags: [ Azure, Automation, Arc, LogAnalytics, Updates, Monitoring ]
-image: assets/users/sergeyperus/guide.png
+image: assets/users/sergeyperus/hybrid.png
 featured: true
 hidden: true
 ---
