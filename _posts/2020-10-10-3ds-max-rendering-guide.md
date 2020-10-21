@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Использование Azure для локальной инфраструктуры"
+title:  "Руководство по использованию рендер-фермы на базе Microsoft Azure"
 author: sergeype
 tags: [ Azure, Batch, hpc, cad, 3dsmax ]
-image: assets/users/sergeyperus/hybrid.png
+image: assets/users/sergeyperus/rendering-guide.png
 featured: true
 hidden: true
 ---
