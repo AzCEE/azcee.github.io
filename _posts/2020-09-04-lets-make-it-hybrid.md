@@ -67,7 +67,9 @@ hidden: true
 
  Создадим [Рабочую Область](https://docs.microsoft.com/ru-ru/azure/azure-monitor/learn/quick-create-workspace) в регионе West Europe, например. Она будет использована для хранения данных, все остальные сервисы будут опираться на нее.
 
+<kbd>
 ![Image](/assets/users/sergeyperus/createlaworkspace.gif)
+</kbd>
 
 
 2. Активируем возможность работы с гибридной средой.
