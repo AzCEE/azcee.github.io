@@ -69,6 +69,12 @@ hidden: true
 
 ![Image](/assets/users/sergeyperus/createlaworkspace.gif)
 
+
+2. Активируем возможность работы с гибридной средой.
+
+В портале Azure идем в "**Subscriptions**" -> "**Settings**" -> "**Resource Providers**", находим **Microsoft.HybridCompute** и нажимаем **Register**. Это необходимо для работы сервиса ARC. 
+
+
 # ------------- ПРОДОЛЖЕНИЕ В РАЗРАБОТКЕ, СЛЕДИТЕ ЗА ОБНОВЛЕНИЯМИ -------------
 
 <!-- 
