@@ -1,9 +1,10 @@
 # Site
-name: "Azure Guru - Microsoft Azure stories by Cloud Architects"
-description: "Azure Guru is a group of creative and passionate enthusiasts and technologists working (or ex-) @Microsoft with core focus on @Azure! We're keen on sharing what we've learnt with everyone in the World!"
-meta_description: "Independently driven blog by members of Cloud Architects"
-logo: 'assets/images/layout/small-logo.png'
-favicon: 'assets/images/layout/-small-logo.png'
+name: "Azure Guru - истории Microsoft Azure от Cloud Architects"
+description: "Azure Guru - это группа творческих и увлеченных энтузиастов и технологов, работающих (или бывших) в @Microsoft с основным фокусом на @Azure! Мы стремимся делиться тем, что узнали, со всеми в мире!"
+meta_description: "Независимый блог от Cloud Architects"
+logo: 'assets/images/layout/logo.png'
+small-logo: 'assets/images/layout/small-logo.png'
+favicon: 'assets/images/layout/small-logo.png'
 baseurl:
 google_site_tag: 'UA-132881488-1'
 disqus: 'azcee'
@@ -16,7 +17,7 @@ permalink: pretty
 authors:
   evgeny:
     name: Evgeny
-    display_name: Evgeny
+    display_name: Evgeny Rudinsky
     gravatar: f246b5cca97060fa8bb803b34c9aee2a
     twitter: https://twitter.com/evgenyrudinsky
     linkedin: https://www.linkedin.com/in/evgenyrudinsky/

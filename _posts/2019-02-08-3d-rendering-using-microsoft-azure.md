@@ -4,7 +4,8 @@ title:  "3D rendering using Microsoft Azure"
 author: sergeype
 tags: [ 3dsmax, vray, rendering, azure, batch, lowpriority, hpc, renderfarm ]
 image: assets/users/sergeyperus/yoda.jpg
-featured: true
+featured: false
+hidden: false
 
 ---
 	

@@ -4,7 +4,8 @@ title:  "Virtual Desktop in Azure"
 author: sergeype
 tags: [ wvd, pool, estimation ]
 image: assets/users/sergeyperus/wvd.png
-featured: true
+featured: false
+hidden: false
 
 ---
 	

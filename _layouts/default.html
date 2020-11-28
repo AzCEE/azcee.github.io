@@ -1,253 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<script type="text/javascript">
-    var sdkInstance = "appInsightsSDK";
-    window[sdkInstance] = "appInsights";
-    var aiName = window[sdkInstance],
-        aisdk = window[aiName] || function (e) {
-            function n(e) {
-                t[e] = function () {
-                    var n = arguments;
-                    t.queue.push(function () {
-                        t[e].apply(t, n)
-                    })
+    <script type="text/javascript">
+        var sdkInstance = "appInsightsSDK";
+        window[sdkInstance] = "appInsights";
+        var aiName = window[sdkInstance],
+            aisdk = window[aiName] || function (e) {
+                function n(e) {
+                    t[e] = function () {
+                        var n = arguments;
+                        t.queue.push(function () {
+                            t[e].apply(t, n)
+                        })
+                    }
                 }
-            }
-            var t = {
-                config: e
-            };
-            t.initialize = !0;
-            var i = document,
-                a = window;
-            setTimeout(function () {
-                var n = i.createElement("script");
-                n.src = e.url || "https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js", i.getElementsByTagName(
-                    "script")[0].parentNode.appendChild(n)
+                var t = {
+                    config: e
+                };
+                t.initialize = !0;
+                var i = document,
+                    a = window;
+                setTimeout(function () {
+                    var n = i.createElement("script");
+                    n.src = e.url || "https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js", i
+                        .getElementsByTagName(
+                            "script")[0].parentNode.appendChild(n)
+                });
+                try {
+                    t.cookie = i.cookie
+                } catch (e) {}
+                t.queue = [], t.version = 2;
+                for (var r = ["Event", "PageView", "Exception", "Trace", "DependencyData", "Metric",
+                        "PageViewPerformance"
+                    ]; r.length;) n("track" + r.pop());
+                n("startTrackPage"), n("stopTrackPage");
+                var s = "Track" + r[0];
+                if (n("start" + s), n("stop" + s), n("setAuthenticatedUserContext"), n("clearAuthenticatedUserContext"),
+                    n(
+                        "flush"), !(!0 === e.disableExceptionTracking || e.extensionConfig && e.extensionConfig
+                        .ApplicationInsightsAnalytics && !0 === e.extensionConfig.ApplicationInsightsAnalytics
+                        .disableExceptionTracking)) {
+                    n("_" + (r = "onerror"));
+                    var o = a[r];
+                    a[r] = function (e, n, i, a, s) {
+                        var c = o && o(e, n, i, a, s);
+                        return !0 !== c && t["_" + r]({
+                            message: e,
+                            url: n,
+                            lineNumber: i,
+                            columnNumber: a,
+                            error: s
+                        }), c
+                    }, e.autoExceptionInstrumented = !0
+                }
+                return t
+            }({
+                instrumentationKey: "a1e4124d-7230-4b69-ac95-108a4d6dcf08"
             });
-            try {
-                t.cookie = i.cookie
-            } catch (e) {}
-            t.queue = [], t.version = 2;
-            for (var r = ["Event", "PageView", "Exception", "Trace", "DependencyData", "Metric",
-                "PageViewPerformance"]; r.length;) n("track" + r.pop());
-            n("startTrackPage"), n("stopTrackPage");
-            var s = "Track" + r[0];
-            if (n("start" + s), n("stop" + s), n("setAuthenticatedUserContext"), n("clearAuthenticatedUserContext"), n(
-                    "flush"), !(!0 === e.disableExceptionTracking || e.extensionConfig && e.extensionConfig
-                    .ApplicationInsightsAnalytics && !0 === e.extensionConfig.ApplicationInsightsAnalytics
-                    .disableExceptionTracking)) {
-                n("_" + (r = "onerror"));
-                var o = a[r];
-                a[r] = function (e, n, i, a, s) {
-                    var c = o && o(e, n, i, a, s);
-                    return !0 !== c && t["_" + r]({
-                        message: e,
-                        url: n,
-                        lineNumber: i,
-                        columnNumber: a,
-                        error: s
-                    }), c
-                }, e.autoExceptionInstrumented = !0
-            }
-            return t
-        }({
-            instrumentationKey: "a1e4124d-7230-4b69-ac95-108a4d6dcf08"
-        });
-    window[aiName] = aisdk, aisdk.queue && 0 === aisdk.queue.length && aisdk.trackPageView({});
-</script>
-    
+        window[aiName] = aisdk, aisdk.queue && 0 === aisdk.queue.length && aisdk.trackPageView({});
+    </script>
 
-{% if jekyll.environment == 'production' %}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132881488-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '{{site.google_site_tag}}');
-</script>
-{% endif %}
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-<link rel="icon" href="{{ site.baseurl }}/assets/images/layout/small-logo.png">
-    
-<title>{{ page.title }} | {{site.name}}</title>
-    
-{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %} 
-    
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    {% if jekyll.environment == 'production' %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132881488-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', '{{site.google_site_tag}}');
+    </script>
+    {% endif %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/layout/small-logo.png">
+
+    <title>{{ page.title }} | {{site.name}}</title>
+
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">{% endif %}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     
-<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
-    
-<link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
-    
-<link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
-    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+        <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
+
+    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
+
 </head>
-        
+
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+
 <body class="{{ layout }}">
 
-    
-<!-- Begin Menu Navigation
-================================================== -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-    
-    <div class="container pr-0">    
-    
-    <!-- Begin Logo -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-    </a>
-    <!-- End Logo -->
-  
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    
-    <div class="collapse navbar-collapse" id="navbarMediumish">
-       
-        <!-- Begin Menu -->
-        
-            <ul class="navbar-nav ml-auto">
-                
-                {% if page.url == "/" %}
-                <li class="nav-item active">
-                {% else %}
-                <li class="nav-item">
-                {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/"><i class="fas fa-home"></i> home</a>
-                </li>
-                
-                {% if page.url == "/about.html" %}
-                <li class="nav-item active">
-                {% else %}
-                <li class="nav-item">
-                {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/who-we-are"><i class="fas fa-users"></i> who we are</a>
-                </li>
-                
-                <li class="nav-item">
-                <a class="nav-link" href="https://github.com/AzCEE/azcee.github.io"><i class="fab fa-github-square"></i> contribute</a>
-                </li>
-                
-                <li class="nav-item">
-                <a target="_blank"  class="nav-link" href="https://portal.azure.com/"><i class="fab fa-microsoft"></i> go build @ Azure Portal</a>
-                </li>
 
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
-                </li>
-                
-                <li class="nav-item">
-                <a target="_blank"  class="nav-link" href="https://twitter.com/"><i class="fab fa-twitter-square"></i></a>
-                </li>
-                        
-            </ul>		
-  
-        <!-- End Menu -->
-
-    </div>
-        
-    </div>
-</nav>
-<!-- End Navigation
+    <!-- Begin Menu Navigation
 ================================================== -->
-    
-<div class="site-content">   
-<div class="container">
-    
-<!-- Content
-================================================== --> 
-<div class="main-content">
-    {{ content }}
-</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
 
-<!-- Bottom Alert Bar
-================================================== -->
-<div class="alertbar">
-	<div class="container text-center">
-		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
-        <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
-            <div class="mc-field-group">
-            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
-            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+        <div class="container pr-0">
+
+            <!-- Begin Logo -->
+            <a class="navbar-brand" href="{{ site.baseurl }}/">
+                <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+            </a>
+            <!-- End Logo -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarMediumish">
+
+                <!-- Begin Menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    {% if page.url == "/" %}
+                    <li class="nav-item active">
+                        {% else %}
+                    <li class="nav-item">
+                        {% endif %}
+                        <a class="nav-link" href="{{ site.baseurl }}/"><i class="fas fa-home"></i> домой</a>
+                    </li>
+
+                    {% if page.url == "/about.html" %}
+                    <li class="nav-item active">
+                        {% else %}
+                    <li class="nav-item">
+                        {% endif %}
+                        <a class="nav-link" href="{{ site.baseurl }}/who-we-are"><i class="fas fa-users"></i> кто мы
+                            </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/AzCEE/azcee.github.io"><i
+                                class="fab fa-github-square"></i> предложить статью</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a target="_blank" class="nav-link" href="https://www.facebook.com/"><i
+                                class="fab fa-facebook-square"></i></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a target="_blank" class="nav-link" href="https://twitter.com/"><i
+                                class="fab fa-twitter-square"></i></a>
+                    </li>
+
+                </ul>
+
+                <!-- End Menu -->
+
             </div>
-        </form>
-	</div>
-</div>    
-    
-</div><!-- /.container>
+
+        </div>
+    </nav>
+    <!-- End Navigation
+================================================== -->
+
+    <div class="site-content">
+        <div class="container">
+
+            <!-- Content
+================================================== -->
+            <div class="main-content">
+                {{ content }}
+            </div>
+
+            <!-- Bottom Alert Bar
+================================================== -->
+            <div class="alertbar">
+                <div class="container text-center">
+                    <span><img src="{{ site.baseurl }}/{{ site.small-logo }}" alt="{{site.title}}" style="max-height: 50px"> &nbsp; Не пропускай
+                        <b>истории</b> от нас, подпишись!</span>
+                    <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form"
+                        class="wj-contact-form validate" target="_blank" novalidate>
+                        <div class="mc-field-group">
+                            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL"
+                                autocomplete="on" required>
+                            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container>
     
 <!-- Categories Jumbotron
 ================================================== -->
-<div class="jumbotron fortags">
-	<div class="d-md-flex h-100">
-		<div class="col-md-4 transpdark align-self-center text-center h-100">
-            <div class="d-md-flex align-items-center justify-content-center h-100">
-                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
-            </div>
-		</div>
-		<div class="col-md-8 p-5 align-self-center text-center">
-          {% assign tags_list = site.tags %}  
-          {% if tags_list.first[0] == null %}
-            {% for tag in tags_list %} 
-              <a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag | capitalize }} {{ site.tags[tag].size }}</a>
-            {% endfor %}
-          {% else %}
-            {% for tag in tags_list %} 
-              <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}">{{ tag[0] | capitalize }} ({{ tag[1].size }})</a>
-            {% endfor %}
-          {% endif %}
-        {% assign tags_list = nil %}
+        <div class="jumbotron fortags">
+            <div class="d-md-flex h-100">
+                <div class="col-md-4 transpdark align-self-center text-center h-100">
+                    <div class="d-md-flex align-items-center justify-content-center h-100">
+                        <h2 class="d-md-block align-self-center py-1 font-weight-light">Тэги <span
+                                class="d-none d-md-inline">→</span></h2>
+                    </div>
+                </div>
+                <div class="col-md-8 p-5 align-self-center text-center">
+                    {% assign tags_list = site.tags %}
+                    {% if tags_list.first[0] == null %}
+                    {% for tag in tags_list %}
+                    <a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag | capitalize }} {{ site.tags[tag].size }}</a>
+                    {% endfor %}
+                    {% else %}
+                    {% for tag in tags_list %}
+                    <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}">{{ tag[0] | capitalize }} ({{ tag[1].size }})</a>
+                    {% endfor %}
+                    {% endif %}
+                    {% assign tags_list = nil %}
 
-		</div>
-	</div>
-</div>
- 
-
-
-<!-- Begin Footer
-================================================== -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 text-center text-lg-left">
-                 Copyright © {{ site.time | date: "%Y" }} {{ site.name }} 
-            </div>
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
-                <a target="_blank" href="https://azcee.github.io">AzCEE team</a>.
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<!-- End Footer
+
+
+
+        <!-- Begin Footer
+================================================== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                        Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
+                    </div>
+                    <div class="col-md-6 col-sm-6 text-center text-lg-right">
+                        <a target="_blank" href="https://azcee.github.io">Azure Guru</a>.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer
 ================================================== -->
 
-   
-</div> <!-- /.site-content>
+
+    </div>
+    <!-- /.site-content>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-    
-<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-<script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
-    
-<script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
-    
-<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+
+    <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
+
+    <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
 </body>
+
 </html>

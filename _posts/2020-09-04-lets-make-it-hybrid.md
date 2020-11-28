@@ -4,8 +4,8 @@ title:  "Использование Azure для локальной инфрас
 author: sergeype
 tags: [ Azure, Automation, Arc, LogAnalytics, Updates, Monitoring ]
 image: assets/users/sergeyperus/hybrid.png
-featured: true
-hidden: true
+featured: false
+hidden: false
 ---
 
 Итак, вы не используете облака, у вас все локально, ну максимум немного местного хостинга. 

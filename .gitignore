@@ -2,3 +2,5 @@ _site
 .sass-cache
 .vs
 .jekyll-cache/
+Gemfile
+Gemfile.lock
