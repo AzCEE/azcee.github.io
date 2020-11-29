@@ -2,67 +2,6 @@
 <html lang="en">
 
 <head>
-
-    <script type="text/javascript">
-        var sdkInstance = "appInsightsSDK";
-        window[sdkInstance] = "appInsights";
-        var aiName = window[sdkInstance],
-            aisdk = window[aiName] || function (e) {
-                function n(e) {
-                    t[e] = function () {
-                        var n = arguments;
-                        t.queue.push(function () {
-                            t[e].apply(t, n)
-                        })
-                    }
-                }
-                var t = {
-                    config: e
-                };
-                t.initialize = !0;
-                var i = document,
-                    a = window;
-                setTimeout(function () {
-                    var n = i.createElement("script");
-                    n.src = e.url || "https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js", i
-                        .getElementsByTagName(
-                            "script")[0].parentNode.appendChild(n)
-                });
-                try {
-                    t.cookie = i.cookie
-                } catch (e) {}
-                t.queue = [], t.version = 2;
-                for (var r = ["Event", "PageView", "Exception", "Trace", "DependencyData", "Metric",
-                        "PageViewPerformance"
-                    ]; r.length;) n("track" + r.pop());
-                n("startTrackPage"), n("stopTrackPage");
-                var s = "Track" + r[0];
-                if (n("start" + s), n("stop" + s), n("setAuthenticatedUserContext"), n("clearAuthenticatedUserContext"),
-                    n(
-                        "flush"), !(!0 === e.disableExceptionTracking || e.extensionConfig && e.extensionConfig
-                        .ApplicationInsightsAnalytics && !0 === e.extensionConfig.ApplicationInsightsAnalytics
-                        .disableExceptionTracking)) {
-                    n("_" + (r = "onerror"));
-                    var o = a[r];
-                    a[r] = function (e, n, i, a, s) {
-                        var c = o && o(e, n, i, a, s);
-                        return !0 !== c && t["_" + r]({
-                            message: e,
-                            url: n,
-                            lineNumber: i,
-                            columnNumber: a,
-                            error: s
-                        }), c
-                    }, e.autoExceptionInstrumented = !0
-                }
-                return t
-            }({
-                instrumentationKey: "a1e4124d-7230-4b69-ac95-108a4d6dcf08"
-            });
-        window[aiName] = aisdk, aisdk.queue && 0 === aisdk.queue.length && aisdk.trackPageView({});
-    </script>
-
-
     {% if jekyll.environment == 'production' %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132881488-1"></script>
@@ -92,12 +31,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-    
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
-        <link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
-        <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
 
     <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
     <script src="{{ site.baseurl }}/assets/js/prism.js"></script>
@@ -147,7 +88,7 @@
                     <li class="nav-item">
                         {% endif %}
                         <a class="nav-link" href="{{ site.baseurl }}/who-we-are"><i class="fas fa-users"></i> кто мы
-                            </a>
+                        </a>
                     </li>
 
                     <li class="nav-item">
@@ -189,7 +130,8 @@
 ================================================== -->
             <div class="alertbar">
                 <div class="container text-center">
-                    <span><img src="{{ site.baseurl }}/{{ site.small-logo }}" alt="{{site.title}}" style="max-height: 50px"> &nbsp; Не пропускай
+                    <span><img src="{{ site.baseurl }}/{{ site.small-logo }}" alt="{{site.title}}"
+                            style="max-height: 50px"> &nbsp; Не пропускай
                         <b>истории</b> от нас, подпишись!</span>
                     <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form"
                         class="wj-contact-form validate" target="_blank" novalidate>
