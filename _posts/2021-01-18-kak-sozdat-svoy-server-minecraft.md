@@ -45,7 +45,10 @@ hidden: false
 Ping до сервера получился в пределах 100 мс. 
 
 ![Ping до сервера Minecraft](/assets/users/erudinsky/minecraft/minecraft-server-ping.png)
-![Ping до сервера Minecraft](/assets/users/erudinsky/minecraft/minecraft-game.png)
+
+Ну все, можно подключаться и играть! ;-)
+
+![Minecraft, подключился к своему серверу](/assets/users/erudinsky/minecraft/minecraft-game.png)
 
 Расчет из [калькулятора](https://azure.microsoft.com/en-us/pricing/calculator/), час работы такого сервера ~ $0.05.
 
