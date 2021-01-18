@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Как создать свой dedicated сервер Minecraft (за пару минут)?
+title:  Как создать свой dedicated сервер Minecraft?
 author: evgeny
 tags: [ minecraft, docker, bedrock ]
 image: assets/users/erudinsky/minecraft/minecraft-title.jpg
