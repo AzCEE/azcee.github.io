@@ -21,8 +21,8 @@ But they must have a recent copy of all files from the central fileshare
 
 2) Set permissions for Storage Account:
 
-    *Storage Blob Data Contributor* for Write and Read access
-    *Storage Blob Data Reader* for READ only access
+**Storage Blob Data Contributor** for Write and Read access
+**Storage Blob Data Reader** for READ only access
 
 We can use 3 types of *security principal*:
 
@@ -76,15 +76,15 @@ You can find an example of a service principal authorization  [here](https://doc
 
 Keep in mind default security options:
 
-*Secure transfer (HTTPS) is **required**
+- Secure transfer (HTTPS) is **required**
 
-*Blob public access is **enabled**. I'd recommend to disable that
+- Blob public access is **enabled**. I'd recommend to disable that
 
-*Storage account key access is **enabled**. I'd recommend to disable it and use only AD auth
+- Storage account key access is **enabled**. I'd recommend to disable it and use only AD auth
 
-*Minimum TLS version is **1.2**. Windows 7 client will not be able to connect
+- Minimum TLS version is **1.2**. Windows 7 client will not be able to connect
 
-*Data is **encrypted by default** using Microsoft-managed keys
+- Data is **encrypted by default** using Microsoft-managed keys
 
 
 You can add [Defender for Storage](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction) - additional Azure-native layer of security intelligence that detects unusual and potentially harmful attempts to access or exploit your storage accounts. It uses advanced threat detection capabilities and [Microsoft Threat Intelligence](https://go.microsoft.com/fwlink/?linkid=2128684) data to provide contextual security alerts. Those alerts also include steps to mitigate the detected threats and prevent future attacks.
