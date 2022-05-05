@@ -21,7 +21,7 @@ But they must have a recent copy of all files from the central fileshare
 
 2) Set permissions for Storage Account:
 
-**Storage Blob Data Contributor** for Write and Read access
+**Storage Blob Data Contributor** for Write and Read access and  
 **Storage Blob Data Reader** for READ only access
 
 We can use 3 types of *security principal*:
