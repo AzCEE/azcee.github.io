@@ -110,15 +110,15 @@ The [Azure Storage pricing page](https://azure.microsoft.com/pricing/details/sto
 
 Let’s make an assumption:
 
-*Out local fileshare has 500 Gb of data. 
+- Out local fileshare has 500 Gb of data. 
 
-*Every month our engineers will download 110Gb of data altogether.
+- Every month our engineers will download 110Gb of data altogether.
 
-*LRS Local redundancy is good enough for our purpose (*Durability 99.9999999%, three copies within a single region. Protects again disk, node, rack failure. Superior to dual-parity RAID*)
+- LRS Local redundancy is good enough for our purpose (*Durability 99.9999999%, three copies within a single region. Protects again disk, node, rack failure. Superior to dual-parity RAID*)
 
-*Standard Hot tier meets our requirements for performance
+- Standard Hot tier meets our requirements for performance
 
-*We will use UK South datacenter
+- We will use UK South datacenter
 
 **Capacity** - 500 Gb will cost us £7.68 per month. It's almost impossible to predict the amount and cost of operations. But in general, with correctly chosen tier, there will be a relatively small charge for it. 
 
