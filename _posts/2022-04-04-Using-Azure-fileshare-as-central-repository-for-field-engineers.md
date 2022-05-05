@@ -31,9 +31,8 @@ We can use 3 types of *security principal*:
 
     Create Service Principal with [Powershell](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azps-7.5.0#create-a-service-principal) or [Portal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) 
 - Managed Identity. 
-    A [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) is better suited for scripts that run from an Azure Virtual Machine (VM)
-    >Here are some of the benefits of using managed identities:
-
+    A [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) is better suited for scripts that run from an Azure Virtual Machine (VM) 
+    > Here are some of the benefits of using managed identities:  
     > You don't need to manage credentials. Credentials aren’t even accessible to you.
     > You can use managed identities to authenticate to any resource that supports Azure AD authentication, including your own applications.
 
