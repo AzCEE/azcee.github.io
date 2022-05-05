@@ -17,7 +17,7 @@ But they must have a recent copy of all files from the central fileshare
 
 ## Solution
 
-1) Create an [Azure Blob storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal) 
+1) Create an [Azure Blob storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)  
 2) Set permissions for Storage Account:
 
 **Storage Blob Data Contributor** for Write and Read access and  
