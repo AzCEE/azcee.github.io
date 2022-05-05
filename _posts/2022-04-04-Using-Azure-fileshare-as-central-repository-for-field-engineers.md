@@ -26,19 +26,16 @@ But they must have a recent copy of all files from the central fileshare
 
 We can use 3 types of *security principal*:
 
-- User identity.
-
+- User identity. 
     A user identity is any user that has an identity in Azure AD. It's the easiest security principal to authorize. It runs with a user interaction, but only once, unless he or she does not authorize at least once in 90 days
 
-- Service Principal.
-
+- Service Principal. 
     A service principal is better suited for scripts that run on-premises/outside of Azure.
     It can use a Password-based or Certificate-based authentication
 
     Create Service Principal with [Powershell](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azps-7.5.0#create-a-service-principal) or [Portal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal)
 
-- Managed Identity.
-
+- Managed Identity. 
     A [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) is better suited for scripts that run from an Azure Virtual Machine (VM)
     Here are some of the benefits of using managed identities:
 
@@ -76,16 +73,11 @@ You can find an example of a service principal authorization  [here](https://doc
 
 Keep in mind default security options:
 
-- Secure transfer (HTTPS) is **required**
-
-- Blob public access is **enabled**. I'd recommend to disable that
-
-- Storage account key access is **enabled**. I'd recommend to disable it and use only AD auth
-
-- Minimum TLS version is **1.2**. Windows 7 client will not be able to connect
-
-- Data is **encrypted by default** using Microsoft-managed keys
-
+- Secure transfer (HTTPS) is **required** 
+- Blob public access is **enabled**. I'd recommend to disable that 
+- Storage account key access is **enabled**. I'd recommend to disable it and use only AD auth 
+- Minimum TLS version is **1.2**. Windows 7 client will not be able to connect 
+- Data is **encrypted by default** using Microsoft-managed keys 
 
 You can add [Defender for Storage](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction) - additional Azure-native layer of security intelligence that detects unusual and potentially harmful attempts to access or exploit your storage accounts. It uses advanced threat detection capabilities and [Microsoft Threat Intelligence](https://go.microsoft.com/fwlink/?linkid=2128684) data to provide contextual security alerts. Those alerts also include steps to mitigate the detected threats and prevent future attacks.
 
@@ -108,26 +100,19 @@ Azure Storage bills based on your storage account usage. All objects in a storag
 
 The [Azure Storage pricing page](https://azure.microsoft.com/pricing/details/storage) provides detailed pricing information based on account type, storage capacity, replication, and transactions. The [Data Transfers pricing details](https://azure.microsoft.com/pricing/details/data-transfers) provides detailed pricing information for data egress. You can use the [Azure Storage pricing calculator](https://azure.microsoft.com/pricing/calculator/?scenario=data-management) to help estimate your costs.
 
-Let’s make an assumption:
-
+Let’s make an assumption: 
 - Out local fileshare has 500 Gb of data. 
-
-- Every month our engineers will download 110Gb of data altogether.
-
-- LRS Local redundancy is good enough for our purpose (*Durability 99.9999999%, three copies within a single region. Protects again disk, node, rack failure. Superior to dual-parity RAID*)
-
-- Standard Hot tier meets our requirements for performance
-
-- We will use UK South datacenter
+- Every month our engineers will download 110Gb of data altogether. 
+- LRS Local redundancy is good enough for our purpose (*Durability 99.9999999%, three copies within a single region. Protects again disk, node, rack failure. Superior to dual-parity RAID*) 
+- Standard Hot tier meets our requirements for performance 
+- We will use UK South datacenter 
 
 **Capacity** - 500 Gb will cost us £7.68 per month. It's almost impossible to predict the amount and cost of operations. But in general, with correctly chosen tier, there will be a relatively small charge for it. 
-
 **Data egress** - 110 Gb will cost us £0.64 per month. First 100 Gb each month is free, and per £0.06 each Gb thereafter 
 
 ## Benefits
 
-So, we end up with less than **£10 per month**. Our engineers **don't need a VPN connection** to securely download/upload data. Our storage is **99.9999999% durable** and we have **120 Gbps egress bandwidth** by default. 
-We have both **AD authentication** for users and **password/certificate** for applications
+So, we end up with less than **£10 per month**. Our engineers **don't need a VPN connection** to securely download/upload data. Our storage is **99.9999999% durable** and we have **120 Gbps egress bandwidth** by default. We have both **AD authentication** for users and **password/certificate** for applications
 
 Do not hesitate to ask questions in comments if any!
 
