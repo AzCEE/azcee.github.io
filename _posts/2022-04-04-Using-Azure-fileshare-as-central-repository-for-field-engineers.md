@@ -104,7 +104,7 @@ Let’s make an assumption:
 - Standard Hot tier meets our requirements for performance 
 - We will use UK South datacenter 
 
-**Capacity** - 500 Gb will cost us £7.68 per month. It's almost impossible to predict the amount and cost of operations. But in general, with correctly chosen tier, there will be a relatively small charge for it. 
+**Capacity** - 500 Gb will cost us £7.68 per month. It's almost impossible to predict the amount and cost of operations. But in general, with correctly chosen tier, there will be a relatively small charge for it.  
 **Data egress** - 110 Gb will cost us £0.64 per month. First 100 Gb each month is free, and per £0.06 each Gb thereafter 
 
 ## Benefits
