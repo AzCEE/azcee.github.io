@@ -17,24 +17,27 @@ But they have to have a rescent copy of all files from the central fileshare
 
 ## Solution
 
-1) Create an Azure Blob storage, 
-2) Join it to Active Directory
-3) Set permissions for Storage Account:
+1) Create an [Azure Blob storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)
+
+2) Set permissions for Storage Account:
          - *Storage Blob Data Contributor* for Write and Read access
          - *Storage Blob Data Reader* for READ only access
 
 We can use 3 types of *security principal*:
 
-- User identity
+- User identity.
+
     A user identity is any user that has an identity in Azure AD. It's the easiest security principal to authorize. It runs with a user interaction, but only once, unless he or she does not authorize at least once in 90 days
 
-- Service Principal
+- Service Principal.
+
     A service principal is better suited for scripts that run on-premises/outside of Azure.
     It can use a Password-based or Certificate-based authentication
 
     Create Service Principal with [Powershell](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azps-7.5.0#create-a-service-principal) or [Portal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal)
 
-- Managed Identity
+- Managed Identity.
+
     A [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) is better suited for scripts that run from an Azure Virtual Machine (VM)
     Here are some of the benefits of using managed identities:
 
@@ -42,6 +45,33 @@ We can use 3 types of *security principal*:
         You can use managed identities to authenticate to any resource that supports Azure AD authentication, including your own applications.
         Managed identities can be used without any additional cost.
         
+3) Use a command-line utility [AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10)
+
+I'd note here, only Blob storage currently supports Azure AD method of authorization, while File Storage supports only a Shared Access Signature (SAS) token.
+
+Example of the script:
+
+	
+
+	$tenantid = "10868dd3-36ce-4e6e-bf97-XXXXXXXXXXXX"
+	$localpath = "d:\1"
+	$azureblob = "https://azcopyblobshare.blob.core.windows.net/container1"
+
+
+	# Authorization
+	azcopy login --tenant-id=$tenantid 	#user identity
+
+	# Onprem to Azure - sync local changes to Azure
+	azcopy sync $localpath  $azureblob --recursive --delete-destination=true
+
+	# Azure to Onprem
+	azcopy sync $azureblob $localpath --recursive --delete-destination=true
+
+
+
+You can find an example of a service principal authorization  [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-authorize-azure-active-directory#authorize-a-service-principal-by-using-a-client-secret)
+
+
 
 
 
