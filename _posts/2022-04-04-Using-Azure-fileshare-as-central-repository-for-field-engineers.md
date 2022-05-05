@@ -126,8 +126,8 @@ Let’s make an assumption:
 
 ## Benefits
 
-So, we end up with less than £10 per month. Our engineers don't need a VPN connection to securely download/upload data. Our storage is 99.9999999% durable and we have 120 Gbps egress bandwidth by default. 
-We have both AD authentication for users and password/certificate for applications
+So, we end up with less than **£10 per month**. Our engineers **don't need a VPN connection** to securely download/upload data. Our storage is **99.9999999% durable** and we have **120 Gbps egress bandwidth** by default. 
+We have both **AD authentication** for users and **password/certificate** for applications
 
 Do not hesitate to ask questions in comments if any!
 
