@@ -52,22 +52,22 @@ I'd note here, only Blob storage currently supports Azure AD method of authoriza
 
 Example of the script:
 
-	```powershell
+```powershell
 
-	$tenantid = "10868dd3-36ce-4e6e-bf97-XXXXXXXXXXXX"
-	$localpath = "d:\1"
-	$azureblob = "https://azcopyblobshare.blob.core.windows.net/container1"
+$tenantid = "10868dd3-36ce-4e6e-bf97-XXXXXXXXXXXX"
+$localpath = "d:\1"
+$azureblob = "https://azcopyblobshare.blob.core.windows.net/container1"
 
 
-	# Authorization
-	azcopy login --tenant-id=$tenantid 	#user identity
+# Authorization
+azcopy login --tenant-id=$tenantid 	#user identity
 
-	# Onprem to Azure - sync local changes to Azure
-	azcopy sync $localpath  $azureblob --recursive --delete-destination=true
+# Onprem to Azure - sync local changes to Azure
+azcopy sync $localpath  $azureblob --recursive --delete-destination=true
 
-	# Azure to Onprem
-	azcopy sync $azureblob $localpath --recursive --delete-destination=true
-
+# Azure to Onprem
+azcopy sync $azureblob $localpath --recursive --delete-destination=true
+```
 
 
 You can find an example of a service principal authorization  [here](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-authorize-azure-active-directory#authorize-a-service-principal-by-using-a-client-secret)
