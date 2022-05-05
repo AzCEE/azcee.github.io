@@ -26,22 +26,76 @@ But they have to have a rescent copy of all files from the central fileshare
 We can use 3 types of *security principal*:
 
 - User identity
-        A user identity is any user that has an identity in Azure AD. It's the easiest security principal to authorize. It runs with a user interaction, but only once, unless he or she does not authorize at least once in 90 days
+    A user identity is any user that has an identity in Azure AD. It's the easiest security principal to authorize. It runs with a user interaction, but only once, unless he or she does not authorize at least once in 90 days
 
 - Service Principal
-        A service principal is better suited for scripts that run on-premises/outside of Azure.
-        It can use a Password-based or Certificate-based authentication
+    A service principal is better suited for scripts that run on-premises/outside of Azure.
+    It can use a Password-based or Certificate-based authentication
 
-        Create Service Principal with [Powershell](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azps-7.5.0#create-a-service-principal) or [Portal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal)
+    Create Service Principal with [Powershell](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azps-7.5.0#create-a-service-principal) or [Portal](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal)
 
 - Managed Identity
-        A [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) is better suited for scripts that run from an Azure Virtual Machine (VM)
-        Here are some of the benefits of using managed identities:
+    A [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) is better suited for scripts that run from an Azure Virtual Machine (VM)
+    Here are some of the benefits of using managed identities:
 
-            You don't need to manage credentials. Credentials aren’t even accessible to you.
-            You can use managed identities to authenticate to any resource that supports Azure AD authentication, including your own applications.
-            Managed identities can be used without any additional cost.
+        You don't need to manage credentials. Credentials aren’t even accessible to you.
+        You can use managed identities to authenticate to any resource that supports Azure AD authentication, including your own applications.
+        Managed identities can be used without any additional cost.
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Model and image can seem like this:
 
