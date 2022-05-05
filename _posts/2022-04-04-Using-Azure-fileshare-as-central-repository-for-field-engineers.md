@@ -21,8 +21,8 @@ But they must have a recent copy of all files from the central fileshare
 
 2) Set permissions for Storage Account:
 
-    - *Storage Blob Data Contributor* for Write and Read access
-    - *Storage Blob Data Reader* for READ only access
+    *Storage Blob Data Contributor* for Write and Read access
+    *Storage Blob Data Reader* for READ only access
 
 We can use 3 types of *security principal*:
 
@@ -77,13 +77,17 @@ You can find an example of a service principal authorization  [here](https://doc
 Keep in mind default security options:
 
 *Secure transfer (HTTPS) is **required**
+
 *Blob public access is **enabled**. I'd recommend to disable that
+
 *Storage account key access is **enabled**. I'd recommend to disable it and use only AD auth
+
 *Minimum TLS version is **1.2**. Windows 7 client will not be able to connect
+
 *Data is **encrypted by default** using Microsoft-managed keys
 
 
-You can add [Defender for Storage](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction) - additional Azure-native layer of security intelligence that detects unusual and potentially harmful attempts to access or exploit your storage accounts. It uses advanced threat detection capabilities and [Microsoft Threat Intelligenc](https://go.microsoft.com/fwlink/?linkid=2128684) data to provide contextual security alerts. Those alerts also include steps to mitigate the detected threats and prevent future attacks.
+You can add [Defender for Storage](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction) - additional Azure-native layer of security intelligence that detects unusual and potentially harmful attempts to access or exploit your storage accounts. It uses advanced threat detection capabilities and [Microsoft Threat Intelligence](https://go.microsoft.com/fwlink/?linkid=2128684) data to provide contextual security alerts. Those alerts also include steps to mitigate the detected threats and prevent future attacks.
 
 Apply Backup, soft delete and blob versioning as you need.
 
@@ -107,13 +111,18 @@ The [Azure Storage pricing page](https://azure.microsoft.com/pricing/details/sto
 Let’s make an assumption:
 
 *Out local fileshare has 500 Gb of data. 
+
 *Every month our engineers will download 110Gb of data altogether.
+
 *LRS Local redundancy is good enough for our purpose (*Durability 99.9999999%, three copies within a single region. Protects again disk, node, rack failure. Superior to dual-parity RAID*)
+
 *Standard Hot tier meets our requirements for performance
+
 *We will use UK South datacenter
 
-	**Capacity** - 500 Gb will cost us £7.68 per month. It's almost impossible to predict the amount and cost of operations. But in general, with correctly chosen tier, there will be a relatively small charge for it. 
-	**Data egress** - 110 Gb will cost us £0.64 per month. First 100 Gb each month is free, and per £0.06 each Gb thereafter 
+**Capacity** - 500 Gb will cost us £7.68 per month. It's almost impossible to predict the amount and cost of operations. But in general, with correctly chosen tier, there will be a relatively small charge for it. 
+
+**Data egress** - 110 Gb will cost us £0.64 per month. First 100 Gb each month is free, and per £0.06 each Gb thereafter 
 
 ## Benefits
 
