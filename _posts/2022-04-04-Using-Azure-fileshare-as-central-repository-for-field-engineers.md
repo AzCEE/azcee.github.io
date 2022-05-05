@@ -2,14 +2,14 @@
 layout: post
 title:  "Azure storage as a central repository for field engineers"
 author: sergeype
-tags: [ azure, fileshare, filestorage, azcopy, sync ]
+tags: [ azure, fileshare, filestorage, azcopy, sync, onecustomerstory ]
 image: assets/users/sergeyperus/AzCopy.jpg
 featured: false
 hidden: false
 
 ---
 
-## Challenge 	
+#onecustomerstory
 
 Our customers often don't have an Internet connection. We need to update their software. 
 We have field engineers who can reach every customer by foot and do a maintenance. 
