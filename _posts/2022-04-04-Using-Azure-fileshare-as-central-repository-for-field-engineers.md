@@ -37,7 +37,9 @@ We can use 3 types of *security principal*:
     > You can use managed identities to authenticate to any resource that supports Azure AD authentication, including your own applications.
 
 Managed identities and service principals are great options if you plan to use AzCopy inside of a script that runs without user interaction
-        
+
+![Storage Blob Data permissions](/assets/users/sergeyperus/Blob data permissions.png)
+
 3) Use a command-line utility [AzCopy](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10)
 
 I'd note here, only Blob storage currently supports Azure AD method of authorization, while File Storage supports only a Shared Access Signature (SAS) token.
@@ -91,7 +93,7 @@ Azure Storage bills based on your storage account usage. All objects in a storag
 - Capacity refers to how much of your storage account allotment you're using to store data.
 - Redundancy determines how many copies of your data are maintained at one time, and in what locations.
 - Transactions refer to all read and write operations to Azure Storage.
-- Data egress refers to any data transferred out of an Azure region. When the data in your storage account is accessed by an application that isn’t  	running in the same region, you're charged for data egress.
+- Data egress refers to any data transferred out of an Azure region. When the data in your storage account is accessed by an application that isn’t running in the same region, you're charged for data egress.
 
 The [Azure Storage pricing page](https://azure.microsoft.com/pricing/details/storage) provides detailed pricing information based on account type, storage capacity, replication, and transactions. The [Data Transfers pricing details](https://azure.microsoft.com/pricing/details/data-transfers) provides detailed pricing information for data egress. You can use the [Azure Storage pricing calculator](https://azure.microsoft.com/pricing/calculator/?scenario=data-management) to help estimate your costs.
 
