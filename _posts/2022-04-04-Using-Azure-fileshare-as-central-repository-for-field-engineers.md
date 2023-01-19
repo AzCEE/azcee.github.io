@@ -111,5 +111,13 @@ Let’s make an assumption:
 
 So, we end up with less than **£10 per month**. Our engineers **don't need a VPN connection** to securely download/upload data. Our storage is **99.9999999% durable** and we have **120 Gbps egress bandwidth** by default. We have both **AD authentication** for users and **password/certificate** for applications
 
+
+## Solution number 2
+
+Azure file shares can be accessed from Windows, Linux and macOS clients over client port 445.
+Because 445 may be blocked by your internet provider or organization, you'll want to check this before deploying.
+Also, 445 is a known attack vector, so it's not recommended to use Azure File Share over the public internet without additional protection.
+Fortunately, Microsoft 
+
 Do not hesitate to ask questions in comments if any!
 
